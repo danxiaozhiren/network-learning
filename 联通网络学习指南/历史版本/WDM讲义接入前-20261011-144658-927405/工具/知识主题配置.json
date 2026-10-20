@@ -1,0 +1,1604 @@
+{
+  "modules": {
+    "transport": {
+      "topics": [
+        {
+          "id": "light-signals",
+          "title": "数据与光信号",
+          "description": "信息怎样变成光，接收端又怎样读回数据。",
+          "keywords": [
+            "比特",
+            "光信号",
+            "调制",
+            "发送",
+            "接收"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "数据怎样变成光",
+              "url": "传输网/光网络基础知识图解.html#light",
+              "coverage": "基础讲解（比特、发送与接收）"
+            }
+          ]
+        },
+        {
+          "id": "fiber-components",
+          "title": "光纤、光模块与传送设备",
+          "description": "认识实际部件的外形、接口和各自的作用。",
+          "keywords": [
+            "光模块",
+            "光纤",
+            "光缆",
+            "跳线",
+            "机框",
+            "板卡"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 14
+            },
+            {
+              "slug": "transport",
+              "index": 11
+            },
+            {
+              "slug": "transport",
+              "index": 5
+            },
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "光模块、跳线与光缆",
+              "url": "传输网/光模块及光纤光缆通识.html#parts",
+              "coverage": "部件、光纤与接口"
+            },
+            {
+              "label": "读懂光模块标签",
+              "url": "传输网/光模块及光纤光缆通识.html#label",
+              "coverage": "速率、波长和传输距离"
+            },
+            {
+              "label": "核对两端能否连接",
+              "url": "传输网/光模块及光纤光缆通识.html#connect",
+              "coverage": "链路连接与规格匹配"
+            },
+            {
+              "label": "光模块与跳线",
+              "url": "传输网/光网络基础知识图解.html#light",
+              "coverage": "基础讲解（光模块与跳线）"
+            },
+            {
+              "label": "机框、板卡与光路部件",
+              "url": "传输网/光网络基础知识图解.html#equipment",
+              "coverage": "基础讲解（机框、板卡、合分波与放大器）"
+            },
+            {
+              "label": "光纤选型",
+              "url": "传输网/光纤光缆技术发展及应用.html#choose-fiber",
+              "coverage": "单模、多模与常见光纤类别"
+            },
+            {
+              "label": "按环境选光缆",
+              "url": "传输网/光纤光缆技术发展及应用.html#scenarios",
+              "coverage": "室内、管道、直埋与架空"
+            },
+            {
+              "label": "分段线路",
+              "url": "传输网/光纤光缆技术发展及应用.html#route",
+              "coverage": "A 到 B 沿途的光纤与光缆选择"
+            },
+            {
+              "label": "NRZ与PAM4",
+              "url": "传输网/光模块关键技术及应用.html#modulation",
+              "coverage": "两种电平表达与单路速率"
+            },
+            {
+              "label": "SR4与LR4怎样传",
+              "url": "传输网/光模块关键技术及应用.html#parallel-wdm",
+              "coverage": "并行光纤与多波长传送"
+            },
+            {
+              "label": "相干光模块与数字处理",
+              "url": "传输网/光模块关键技术及应用.html#coherent",
+              "coverage": "相干接收与数字信号处理"
+            }
+          ]
+        },
+        {
+          "id": "signal-quality",
+          "title": "光信号质量与链路测试",
+          "description": "距离和干扰怎样影响传送，又需要检查哪些问题。",
+          "keywords": [
+            "衰减",
+            "色散",
+            "噪声",
+            "光层测试",
+            "业务测试"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 4
+            },
+            {
+              "slug": "transport",
+              "index": 7
+            },
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "衰减、色散与噪声",
+              "url": "传输网/光网络基础知识图解.html#quality",
+              "coverage": "基础讲解（衰减、色散、噪声）；测试专课待补充"
+            }
+          ]
+        },
+        {
+          "id": "wdm",
+          "title": "波分复用（WDM）",
+          "description": "多路不同波长的光怎样同时通过一根光纤。",
+          "keywords": [
+            "波分复用",
+            "波分",
+            "波长",
+            "WDM",
+            "合波",
+            "分波"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 6
+            },
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "一根光纤传多路光",
+              "url": "传输网/光网络基础知识图解.html#wdm",
+              "coverage": "基础讲解（WDM 共纤原理）；WDM 专课待补充"
+            }
+          ]
+        },
+        {
+          "id": "otn",
+          "title": "光传送网（OTN）",
+          "description": "不同业务怎样组织起来传送，途中怎样检查传送情况。",
+          "keywords": [
+            "OTN",
+            "业务组织",
+            "传送监测",
+            "光传送网"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 13
+            },
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "业务组织与监测",
+              "url": "传输网/光网络基础知识图解.html#otn",
+              "coverage": "基础讲解（业务组织与监测）；OTN 专课待补充"
+            }
+          ]
+        },
+        {
+          "id": "roadm",
+          "title": "可重构光分插复用（ROADM）",
+          "description": "怎样把指定波长分到本站或转向另一条光纤。",
+          "keywords": [
+            "可重构光分插复用",
+            "ROADM",
+            "波长转接",
+            "光分插",
+            "上下波"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 12
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "ason",
+          "title": "自动交换光网络（ASON）",
+          "description": "怎样自动建立传送连接，并在故障时利用可用路线恢复。",
+          "keywords": [
+            "自动交换光网络",
+            "ASON",
+            "自动连接",
+            "选路",
+            "控制平面",
+            "故障恢复",
+            "备用路线"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 15
+            }
+          ],
+          "readings": [
+            {
+              "label": "从 A 到 B：连接与恢复",
+              "url": "传输网/光网络基础知识图解.html#business-journey",
+              "coverage": "基础讲解（ASON 与备用路线）"
+            }
+          ]
+        },
+        {
+          "id": "sdn",
+          "title": "软件定义网络（SDN）",
+          "description": "软件怎样统一安排光传送网络中的设备与连接。",
+          "keywords": [
+            "SDN",
+            "软件定义网络",
+            "集中管控",
+            "光传送网管控"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 3
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "optical-operations",
+          "title": "光网络监测与智能运维",
+          "description": "怎样结合告警和性能数据发现、定位与处理问题。",
+          "keywords": [
+            "智能运维",
+            "告警",
+            "性能",
+            "故障定位"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 9
+            },
+            {
+              "slug": "transport",
+              "index": 2
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "enterprise-interconnect",
+          "title": "政企连接与数据中心互联",
+          "description": "传送网络怎样支撑企业连接和算力基础设施。",
+          "keywords": [
+            "政企精品网",
+            "全光底座",
+            "算力",
+            "数据中心互联"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 10
+            },
+            {
+              "slug": "transport",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "network-synchronization",
+          "title": "网络的频率与时间同步",
+          "description": "网络设备为什么需要对齐频率和时间。",
+          "keywords": [
+            "同步网",
+            "频率同步",
+            "时间同步"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 16
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "space-optical-communication",
+          "title": "空间光通信",
+          "description": "了解不依赖光纤的空间光通信技术。",
+          "keywords": [
+            "空间光通信",
+            "空间光链路"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 0
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "optical-sensing",
+          "title": "光网络感知与通感一体",
+          "description": "了解光网络怎样结合通信与感知。",
+          "keywords": [
+            "光网络感知",
+            "通感一体",
+            "光感知"
+          ],
+          "course_refs": [
+            {
+              "slug": "transport",
+              "index": 1
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "access": {
+      "topics": [
+        {
+          "id": "access-architecture",
+          "title": "宽带接入网组成与部署",
+          "description": "",
+          "keywords": [
+            "宽带接入",
+            "接入架构",
+            "接入规划"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 11
+            },
+            {
+              "slug": "access",
+              "index": 9
+            },
+            {
+              "slug": "access",
+              "index": 8
+            },
+            {
+              "slug": "access",
+              "index": 3
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "optical-distribution",
+          "title": "光分配网（ODN）",
+          "description": "认识光配线设备及其组网方式。",
+          "keywords": [
+            "ODN",
+            "光配线",
+            "光分配网络"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 1
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "home-networking",
+          "title": "家庭组网与智慧家庭",
+          "description": "",
+          "keywords": [
+            "家庭组网",
+            "智慧家庭",
+            "家庭网络"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 6
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "access-authentication",
+          "title": "用户接入与认证（BRAS / AAA）",
+          "description": "用户接入宽带网络时，怎样完成身份与接入管理。",
+          "keywords": [
+            "BRAS",
+            "AAA",
+            "宽带认证",
+            "用户接入"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 0
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "iptv",
+          "title": "网络电视（IPTV）",
+          "description": "",
+          "keywords": [
+            "IPTV",
+            "网络电视",
+            "电视业务"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 5
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "enterprise-access-solutions",
+          "title": "政企客户接入方案",
+          "description": "学习怎样编制面向政企客户的解决方案。",
+          "keywords": [
+            "政企客户",
+            "客户方案",
+            "接入方案"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 10
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "access-maintenance",
+          "title": "接入测试、维护与运营支撑",
+          "description": "怎样检查接入网络，并用维护和支撑系统处理问题。",
+          "keywords": [
+            "接入测试",
+            "仪表",
+            "维护",
+            "运营支撑"
+          ],
+          "course_refs": [
+            {
+              "slug": "access",
+              "index": 4
+            },
+            {
+              "slug": "access",
+              "index": 7
+            },
+            {
+              "slug": "access",
+              "index": 2
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "data": {
+      "topics": [
+        {
+          "id": "routing-devices",
+          "title": "数据网组成、设备与路由交换",
+          "description": "认识数据网和网络设备，再理解数据怎样被转发。",
+          "keywords": [
+            "路由",
+            "交换",
+            "网络设备",
+            "数据网现状"
+          ],
+          "course_refs": [
+            {
+              "slug": "data",
+              "index": 7
+            },
+            {
+              "slug": "data",
+              "index": 10
+            },
+            {
+              "slug": "data",
+              "index": 12
+            },
+            {
+              "slug": "data",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "ipv6-addressing",
+          "title": "地址与下一代互联网协议（IPv6）",
+          "description": "理解 IPv6 的基本原理及网络中的部署。",
+          "keywords": [
+            "IPv6",
+            "IP地址",
+            "互联网协议"
+          ],
+          "course_refs": [
+            {
+              "slug": "data",
+              "index": 5
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "metro-wide-area",
+          "title": "城域网与广域网组网",
+          "description": "",
+          "keywords": [
+            "城域网",
+            "广域网",
+            "BNC",
+            "智能城域网",
+            "宽带核心网"
+          ],
+          "course_refs": [
+            {
+              "slug": "data",
+              "index": 1
+            },
+            {
+              "slug": "data",
+              "index": 13
+            },
+            {
+              "slug": "data",
+              "index": 3
+            },
+            {
+              "slug": "data",
+              "index": 0
+            },
+            {
+              "slug": "data",
+              "index": 2
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "data-service-vpn",
+          "title": "业务承载与专用连接（VPN）",
+          "description": "不同业务怎样使用数据网络，并获得所需的连接可靠性。",
+          "keywords": [
+            "VPN",
+            "业务承载",
+            "可靠性",
+            "专用网络"
+          ],
+          "course_refs": [
+            {
+              "slug": "data",
+              "index": 9
+            },
+            {
+              "slug": "data",
+              "index": 6
+            },
+            {
+              "slug": "data",
+              "index": 11
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "data-center-sdn",
+          "title": "数据中心网络与统一运营",
+          "description": "理解数据中心网络的软件控制和跨网络运营。",
+          "keywords": [
+            "数据中心",
+            "SDN",
+            "软件定义网络",
+            "一体化运营"
+          ],
+          "course_refs": [
+            {
+              "slug": "data",
+              "index": 14
+            },
+            {
+              "slug": "data",
+              "index": 4
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "wireless": {
+      "topics": [
+        {
+          "id": "radio-frequency",
+          "title": "无线信号、频率与干扰",
+          "description": "先理解无线通信原理，再认识频谱使用和干扰问题。",
+          "keywords": [
+            "无线原理",
+            "频率",
+            "频谱",
+            "干扰"
+          ],
+          "course_refs": [
+            {
+              "slug": "wireless",
+              "index": 16
+            },
+            {
+              "slug": "wireless",
+              "index": 12
+            },
+            {
+              "slug": "wireless",
+              "index": 7
+            },
+            {
+              "slug": "wireless",
+              "index": 6
+            },
+            {
+              "slug": "wireless",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "base-station-hardware",
+          "title": "无线设备与基站架构",
+          "description": "认识无线设备和基站内部的硬件组成。",
+          "keywords": [
+            "基站",
+            "无线设备",
+            "硬件架构"
+          ],
+          "course_refs": [
+            {
+              "slug": "wireless",
+              "index": 15
+            },
+            {
+              "slug": "wireless",
+              "index": 11
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "radio-deployment",
+          "title": "无线组网与业务场景",
+          "description": "理解不同覆盖和业务场景下怎样组织无线网络。",
+          "keywords": [
+            "无线组网",
+            "场景化组网",
+            "无线ICT"
+          ],
+          "course_refs": [
+            {
+              "slug": "wireless",
+              "index": 14
+            },
+            {
+              "slug": "wireless",
+              "index": 10
+            },
+            {
+              "slug": "wireless",
+              "index": 2
+            },
+            {
+              "slug": "wireless",
+              "index": 9
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "radio-cloud-intelligence",
+          "title": "无线网云化与智能化",
+          "description": "了解无线网络怎样引入云化、开放化和人工智能。",
+          "keywords": [
+            "云化",
+            "开放化",
+            "人工智能",
+            "AI",
+            "智能化"
+          ],
+          "course_refs": [
+            {
+              "slug": "wireless",
+              "index": 1
+            },
+            {
+              "slug": "wireless",
+              "index": 13
+            },
+            {
+              "slug": "wireless",
+              "index": 3
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "radio-evolution",
+          "title": "无线技术演进（5G-A / 6G）",
+          "description": "在现有无线原理基础上认识新一代技术与应用方向。",
+          "keywords": [
+            "5G-A",
+            "5G-Advanced",
+            "6G",
+            "技术演进"
+          ],
+          "course_refs": [
+            {
+              "slug": "wireless",
+              "index": 0
+            },
+            {
+              "slug": "wireless",
+              "index": 5
+            },
+            {
+              "slug": "wireless",
+              "index": 4
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "core": {
+      "topics": [
+        {
+          "id": "core-architecture",
+          "title": "移动核心网架构（EPC / 5GC）",
+          "description": "认识移动核心网的组成、演进和主要组网方式。",
+          "keywords": [
+            "核心网",
+            "EPC",
+            "5GC",
+            "5G SA",
+            "SCP"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 18
+            },
+            {
+              "slug": "core",
+              "index": 19
+            },
+            {
+              "slug": "core",
+              "index": 13
+            },
+            {
+              "slug": "core",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "voice-messaging-roaming",
+          "title": "语音、消息与漫游",
+          "description": "理解语音和消息业务，以及用户跨网络移动时的连接。",
+          "keywords": [
+            "IMS",
+            "语音",
+            "消息",
+            "漫游",
+            "3G退网"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 3
+            },
+            {
+              "slug": "core",
+              "index": 10
+            },
+            {
+              "slug": "core",
+              "index": 11
+            },
+            {
+              "slug": "core",
+              "index": 9
+            },
+            {
+              "slug": "core",
+              "index": 0
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "cloud-edge-computing",
+          "title": "云计算与边缘计算",
+          "description": "认识计算资源怎样部署到云端和靠近业务的位置。",
+          "keywords": [
+            "云计算",
+            "边缘计算",
+            "云应用"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 14
+            },
+            {
+              "slug": "core",
+              "index": 4
+            },
+            {
+              "slug": "core",
+              "index": 1
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "private-slicing-capabilities",
+          "title": "专网、网络切片与能力开放",
+          "description": "网络怎样面向不同企业和行业提供专用能力。",
+          "keywords": [
+            "专网",
+            "网络切片",
+            "能力开放",
+            "原子能力",
+            "行业应用"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 17
+            },
+            {
+              "slug": "core",
+              "index": 12
+            },
+            {
+              "slug": "core",
+              "index": 2
+            },
+            {
+              "slug": "core",
+              "index": 15
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "core-security-resilience",
+          "title": "核心网安全与容灾",
+          "description": "理解信令安全问题，以及故障时怎样保障网络能力。",
+          "keywords": [
+            "信令安全",
+            "容灾",
+            "可靠性"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 7
+            },
+            {
+              "slug": "core",
+              "index": 5
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "integrated-space-network",
+          "title": "空天地海融合网络",
+          "description": "认识空天地一体化与空天地海一体化的关键技术和组网。",
+          "keywords": [
+            "空天地一体化",
+            "空天地海",
+            "融合组网"
+          ],
+          "course_refs": [
+            {
+              "slug": "core",
+              "index": 6
+            },
+            {
+              "slug": "core",
+              "index": 16
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "terminal": {
+      "topics": [
+        {
+          "id": "terminal-modules",
+          "title": "终端类型与通信模组",
+          "description": "认识各类终端，以及使设备具备通信能力的部件。",
+          "keywords": [
+            "泛终端",
+            "通信模组",
+            "终端类型",
+            "现网终端"
+          ],
+          "course_refs": [
+            {
+              "slug": "terminal",
+              "index": 9
+            },
+            {
+              "slug": "terminal",
+              "index": 1
+            },
+            {
+              "slug": "terminal",
+              "index": 7
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "terminal-radio-capabilities",
+          "title": "终端连接与无线能力",
+          "description": "理解终端使用的无线技术及轻量化连接能力。",
+          "keywords": [
+            "5G",
+            "无线通信",
+            "RedCap",
+            "轻量化5G"
+          ],
+          "course_refs": [
+            {
+              "slug": "terminal",
+              "index": 2
+            },
+            {
+              "slug": "terminal",
+              "index": 10
+            },
+            {
+              "slug": "terminal",
+              "index": 3
+            },
+            {
+              "slug": "terminal",
+              "index": 6
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "subscriber-identity",
+          "title": "用户身份与通信卡（SIM / eSIM）",
+          "description": "通信卡怎样承载身份与业务能力，规范如何约定。",
+          "keywords": [
+            "SIM",
+            "eSIM",
+            "电信卡",
+            "一号双终端"
+          ],
+          "course_refs": [
+            {
+              "slug": "terminal",
+              "index": 4
+            },
+            {
+              "slug": "terminal",
+              "index": 5
+            },
+            {
+              "slug": "terminal",
+              "index": 11
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "terminal-edge-ai",
+          "title": "终端计算与端边协同",
+          "description": "理解人工智能应用需要的计算能力，以及终端与边缘的分工。",
+          "keywords": [
+            "端边一体",
+            "AI",
+            "深度学习",
+            "大模型",
+            "终端计算"
+          ],
+          "course_refs": [
+            {
+              "slug": "terminal",
+              "index": 0
+            },
+            {
+              "slug": "terminal",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "low-altitude-terminals",
+          "title": "低空通信应用",
+          "description": "了解 5G 与低空场景怎样结合。",
+          "keywords": [
+            "低空",
+            "5G应用",
+            "泛在低空"
+          ],
+          "course_refs": [
+            {
+              "slug": "terminal",
+              "index": 12
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "network-it": {
+      "topics": [
+        {
+          "id": "data-analysis",
+          "title": "数据处理、解析与分析",
+          "description": "先认识数据基础，再学习解析、挖掘和分析工具。",
+          "keywords": [
+            "大数据",
+            "数据解析",
+            "数据分析",
+            "数据挖掘"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 2
+            },
+            {
+              "slug": "network-it",
+              "index": 1
+            },
+            {
+              "slug": "network-it",
+              "index": 13
+            },
+            {
+              "slug": "network-it",
+              "index": 9
+            },
+            {
+              "slug": "network-it",
+              "index": 12
+            },
+            {
+              "slug": "network-it",
+              "index": 3
+            },
+            {
+              "slug": "network-it",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "network-management",
+          "title": "网络管理与优化",
+          "description": "理解网络数据规范和网络优化的基本工作。",
+          "keywords": [
+            "网络管理",
+            "数据规范",
+            "网络优化"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 7
+            },
+            {
+              "slug": "network-it",
+              "index": 14
+            },
+            {
+              "slug": "network-it",
+              "index": 10
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "mobile-core-basics",
+          "title": "移动核心网基础",
+          "description": "",
+          "keywords": [
+            "移动核心网",
+            "核心网基础"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 6
+            },
+            {
+              "slug": "network-it",
+              "index": 5
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "wireless-basics",
+          "title": "无线网络基础",
+          "description": "",
+          "keywords": [
+            "无线网络",
+            "无线基础"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 15
+            },
+            {
+              "slug": "network-it",
+              "index": 11
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "network-security",
+          "title": "网络安全与攻防",
+          "description": "认识网络攻击、防护及其技术问题。",
+          "keywords": [
+            "网络安全",
+            "攻防",
+            "安全防护"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 0
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "ai-network-innovation",
+          "title": "人工智能与网络融合",
+          "description": "了解人工智能技术和网络融合创新的基本方向。",
+          "keywords": [
+            "人工智能",
+            "AI",
+            "融合创新"
+          ],
+          "course_refs": [
+            {
+              "slug": "network-it",
+              "index": 4
+            },
+            {
+              "slug": "network-it",
+              "index": 17
+            },
+            {
+              "slug": "network-it",
+              "index": 16
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "standards": {
+      "topics": [
+        {
+          "id": "investment-evaluation",
+          "title": "投资成本、收益与经济评价",
+          "description": "理解电信投资项目怎样进行经济评价。",
+          "keywords": [
+            "投资评价",
+            "经济评价",
+            "电信投资"
+          ],
+          "course_refs": [
+            {
+              "slug": "standards",
+              "index": 0
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "management": {
+      "topics": [
+        {
+          "id": "rd-projects",
+          "title": "研发组织与项目管理",
+          "description": "理解人员、流程、方法和工具怎样支撑研发项目。",
+          "keywords": [
+            "研发人员",
+            "研发项目",
+            "项目管理",
+            "核心技术攻关"
+          ],
+          "course_refs": [
+            {
+              "slug": "management",
+              "index": 1
+            },
+            {
+              "slug": "management",
+              "index": 3
+            },
+            {
+              "slug": "management",
+              "index": 10
+            },
+            {
+              "slug": "management",
+              "index": 11
+            },
+            {
+              "slug": "management",
+              "index": 12
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "standard-systems",
+          "title": "国内外标准体系",
+          "description": "",
+          "keywords": [
+            "标准",
+            "国际标准",
+            "国内标准",
+            "标准化"
+          ],
+          "course_refs": [
+            {
+              "slug": "management",
+              "index": 5
+            },
+            {
+              "slug": "management",
+              "index": 4
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "patent-management",
+          "title": "专利基础与管理",
+          "description": "",
+          "keywords": [
+            "专利",
+            "知识产权",
+            "专利管理"
+          ],
+          "course_refs": [
+            {
+              "slug": "management",
+              "index": 7
+            },
+            {
+              "slug": "management",
+              "index": 2
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "research-results",
+          "title": "科技成果管理制度与平台",
+          "description": "了解科技成果管理制度，以及成果管理平台怎样使用。",
+          "keywords": [
+            "科技成果",
+            "成果管理制度",
+            "成果管理平台",
+            "集团制度"
+          ],
+          "course_refs": [
+            {
+              "slug": "management",
+              "index": 9
+            },
+            {
+              "slug": "management",
+              "index": 8
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "innovation-awards",
+          "title": "创新激励与奖项申报",
+          "description": "了解创新激励政策、评奖要求和申报过程。",
+          "keywords": [
+            "激励政策",
+            "奖项申报",
+            "评奖"
+          ],
+          "course_refs": [
+            {
+              "slug": "management",
+              "index": 6
+            },
+            {
+              "slug": "management",
+              "index": 0
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "innovation": {
+      "topics": [
+        {
+          "id": "innovation-policy-projects",
+          "title": "科创政策与研发管理",
+          "description": "认识科创政策和研发项目管理的基本要求。",
+          "keywords": [
+            "科创政策",
+            "研发管理",
+            "项目管理"
+          ],
+          "course_refs": [
+            {
+              "slug": "innovation",
+              "index": 3
+            },
+            {
+              "slug": "innovation",
+              "index": 4
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "technical-writing",
+          "title": "技术文稿与成果表达",
+          "description": "学习怎样把技术工作整理成清楚的文稿。",
+          "keywords": [
+            "技术文稿",
+            "写作",
+            "成果表达"
+          ],
+          "course_refs": [
+            {
+              "slug": "innovation",
+              "index": 0
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "intellectual-property",
+          "title": "专利与软件著作权",
+          "description": "认识专利培育、运用以及知识产权申请流程。",
+          "keywords": [
+            "专利",
+            "软著",
+            "软件著作权",
+            "知识产权"
+          ],
+          "course_refs": [
+            {
+              "slug": "innovation",
+              "index": 5
+            },
+            {
+              "slug": "innovation",
+              "index": 6
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "results-transformation",
+          "title": "科技成果管理与转化",
+          "description": "",
+          "keywords": [
+            "成果管理",
+            "成果转化"
+          ],
+          "course_refs": [
+            {
+              "slug": "innovation",
+              "index": 1
+            },
+            {
+              "slug": "innovation",
+              "index": 2
+            }
+          ],
+          "readings": []
+        }
+      ]
+    },
+    "research": {
+      "topics": [
+        {
+          "id": "analytical-thinking",
+          "title": "数据思维与分析工具",
+          "description": "从数据思维开始，学习用工具分析业务问题。",
+          "keywords": [
+            "数据思维",
+            "数据分析",
+            "AI",
+            "SPSS"
+          ],
+          "course_refs": [
+            {
+              "slug": "research",
+              "index": 2
+            },
+            {
+              "slug": "research",
+              "index": 1
+            },
+            {
+              "slug": "research",
+              "index": 9
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "industry-research",
+          "title": "行业环境与市场洞察",
+          "description": "学习怎样观察宏观环境、政策、市场及行业趋势。",
+          "keywords": [
+            "PEST",
+            "宏观政策",
+            "市场洞察",
+            "数字经济",
+            "低空经济"
+          ],
+          "course_refs": [
+            {
+              "slug": "research",
+              "index": 6
+            },
+            {
+              "slug": "research",
+              "index": 8
+            },
+            {
+              "slug": "research",
+              "index": 0
+            },
+            {
+              "slug": "research",
+              "index": 12
+            },
+            {
+              "slug": "research",
+              "index": 4
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "business-decisions",
+          "title": "财务、收益与战略决策",
+          "description": "理解财务信息、收益管理和战略分析怎样支持判断。",
+          "keywords": [
+            "财务报表",
+            "收益管理",
+            "战略管理",
+            "战略分析"
+          ],
+          "course_refs": [
+            {
+              "slug": "research",
+              "index": 7
+            },
+            {
+              "slug": "research",
+              "index": 5
+            },
+            {
+              "slug": "research",
+              "index": 15
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "product-business-planning",
+          "title": "产品、营销与业务规划",
+          "description": "认识产品设计、数字营销和相关业务规划的思路。",
+          "keywords": [
+            "产品设计",
+            "数字营销",
+            "算网数智",
+            "智慧城市"
+          ],
+          "course_refs": [
+            {
+              "slug": "research",
+              "index": 13
+            },
+            {
+              "slug": "research",
+              "index": 11
+            },
+            {
+              "slug": "research",
+              "index": 3
+            },
+            {
+              "slug": "research",
+              "index": 10
+            }
+          ],
+          "readings": []
+        },
+        {
+          "id": "research-reporting",
+          "title": "调研报告与研究表达",
+          "description": "把调研发现组织成读者能够理解的报告。",
+          "keywords": [
+            "调研报告",
+            "研究报告",
+            "报告写作"
+          ],
+          "course_refs": [
+            {
+              "slug": "research",
+              "index": 14
+            }
+          ],
+          "readings": []
+        }
+      ]
+    }
+  }
+}

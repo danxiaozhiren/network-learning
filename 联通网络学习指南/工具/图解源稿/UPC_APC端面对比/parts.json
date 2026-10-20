@@ -1,0 +1,20 @@
+{
+  "upc": [
+    "upc-shell",
+    "upc-grip-back",
+    "upc-shell-lip",
+    "upc-grip-front",
+    "upc-ferrule-lower",
+    "upc-fibre",
+    "upc-ferrule-upper"
+  ],
+  "apc": [
+    "apc-shell",
+    "apc-grip-back",
+    "apc-shell-lip",
+    "apc-grip-front",
+    "apc-ferrule-lower",
+    "apc-fibre",
+    "apc-ferrule-upper"
+  ]
+}

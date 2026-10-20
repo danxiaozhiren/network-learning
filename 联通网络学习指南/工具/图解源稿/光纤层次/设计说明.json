@@ -1,0 +1,33 @@
+{
+  "tier": "Figure",
+  "subject": "松套结构光缆中选定一根光纤，独立放大同一根光纤，再按涂覆层、包层、纤芯逐层观察。",
+  "scope": "只替换第二节第一幅光纤层次图；原图及文字留在对照区，正文、章节及其他图解原样保留。",
+  "parts": {
+    "cable": [
+      "外护套",
+      "中心加强件",
+      "4根松套管",
+      "每管7根光纤，其中一根向前露出作为放大对象"
+    ],
+    "magnification": [
+      "外部涂覆层",
+      "玻璃包层",
+      "中心纤芯"
+    ]
+  },
+  "teachingBoundary": "松套结构仅为示例。光纤层次按通用实芯通信玻璃光纤示意；颜色和比例不是产品规格。纤芯与包层共同导光，涂覆层保护玻璃。包层的图示截短用于观察纤芯，不代表包层可像护套一样剥离，也不演示真实开剥。",
+  "interaction": "五个手动状态，选择步骤、上一步、下一步、从头重看；手机可切换当前部件和完整关系；键盘使用原生控件；无自动播放。",
+  "palette": {
+    "core": "#315e86",
+    "cladding": "#d6e5ef",
+    "coating": "#e1c984",
+    "strength": "#806b4b",
+    "jacket": "neutral gray"
+  },
+  "sources": [
+    "https://www.corning.com/worldwide/en/innovation/the-glass-age/science-of-glass/how-it-works-optical-fiber.html",
+    "https://www.corning.com/content/dam/corning/catalog/coc/documents/white-papers/WP3703.pdf"
+  ],
+  "anatomy": "../光模块收发功能/vendor/anatomy; reuse checked MIT toolkit",
+  "backup": "联通网络学习指南/历史版本/光纤层次Anatomy前-20261016-224006"
+}

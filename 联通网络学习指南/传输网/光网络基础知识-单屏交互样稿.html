@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>光网络基础知识 · 设备与业务流转交互样稿</title>
+<style>
+:root{--ink:#243343;--muted:#617080;--line:#dce3e8;--blue:#315e86;--teal:#33766c;--control:#806b4b;--red:#b54d48;--active:var(--blue);--active-soft:#edf4f9}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}h1,h2,h3,p,figure{margin:0}button,select,input{font:inherit}button,summary{cursor:pointer}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}button:disabled{cursor:default;opacity:.38}button,a,summary,select,input{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sitebar{height:56px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 max(24px,calc((100% - 1200px)/2));background:#fff}.sitebar h1{font-size:19px;font-weight:600;letter-spacing:.01em}.sitebar a{font-size:14px;white-space:nowrap}
+main{max-width:1040px;margin:18px auto 40px;padding:0 24px}.player{border:1px solid #cfdbe3;border-radius:9px;overflow:clip;--active:var(--blue);--active-soft:#edf4f9}.player[data-role=digital]{--active:var(--teal);--active-soft:#eef6f3}.player[data-role=control]{--active:var(--control);--active-soft:#f7f4ed}
+.player-heading{height:52px;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}.player-heading h2{font-size:23px;line-height:1.35;font-weight:600;letter-spacing:-.01em}.step-count{font-size:13px;line-height:1.5;color:var(--muted);white-space:nowrap}
+.route-rail{height:57px;padding:8px 22px;display:grid;grid-template-columns:1fr 64px .8fr 64px 1fr;align-items:center;border-bottom:1px solid var(--line);background:#f8fafb;gap:8px;font-size:13px;line-height:1.4}.route-node{display:flex;gap:9px;align-items:center;justify-content:center;min-width:0;padding:5px 8px;border:1px solid transparent;border-radius:4px}.route-node b{font-weight:600;white-space:nowrap}.route-node span{color:var(--muted);min-width:0}.route-node.current{background:#fff;border-color:var(--active);color:var(--active)}.route-node.current span{color:var(--active)}.route-link{height:2px;background:#c8d5de;position:relative}.route-link:after{content:'';position:absolute;right:-1px;top:-3px;border-left:6px solid #a3b7c6;border-block:4px solid transparent}.route-link.connected{background:var(--blue)}.route-link.connected:after{border-left-color:var(--blue)}.route-link.waiting{background:repeating-linear-gradient(90deg,#8da4b5 0 5px,transparent 5px 9px)}.route-link.cut{background:#e2c0be}.route-link.cut:before{content:'×';position:absolute;left:45%;top:-14px;font-size:22px;line-height:1;color:var(--red);background:#f8fafb}.route-link.cut:after{border-left-color:#c09894}
+.action-scene{height:280px;padding:18px 24px;display:grid;grid-template-columns:minmax(0,1fr) 35px 198px 35px minmax(0,1fr);gap:12px;align-items:center;background:#fff;position:relative}.signal{min-width:0;min-height:139px;padding:12px 13px;border:1px solid #c1d1dc;border-radius:6px;background:#f8fbfc}.signal-head{display:flex;gap:9px;align-items:baseline;justify-content:space-between;font-size:13px;line-height:1.55;margin-bottom:11px}.signal-head>span{color:var(--muted);white-space:nowrap}.signal-head b{font-size:14px;color:var(--blue);font-weight:600}.signal[data-kind=data] .signal-head b,.signal[data-kind=odu] .signal-head b{color:var(--teal)}.signal-body{display:flex;align-items:center;gap:11px;min-width:0}.signal-icon{width:47px;height:40px;flex-shrink:0;color:var(--blue)}.signal-icon path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.signal[data-kind=data] .signal-icon,.signal[data-kind=odu] .signal-icon,.signal[data-kind=pending] .signal-icon{color:var(--teal)}.payload{min-width:0;flex:1;border:1px solid #b8cec3;border-radius:4px;background:#fff;overflow:hidden;font-size:13px;line-height:1.5}.payload-data{display:flex;gap:7px;align-items:center;justify-content:space-between;padding:8px}.payload-data b{font-weight:600;white-space:nowrap}.bits{font:600 19px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;color:var(--teal)}.payload-monitor{padding:5px 8px;background:#eef5f0;border-top:1px solid #cbdacf;color:#507566;font-size:13px;line-height:1.5}.signal-note{font-size:13px;line-height:1.5;color:var(--muted);margin-top:8px;min-height:20px}.signal.pending .payload{border-style:dashed;background:#fafcfb}.signal.pending .bits{color:#80958a}.signal.pending .payload-monitor{color:#7b9185}.signal[data-kind=connection] .payload{border-style:dashed;opacity:.72}.signal[data-kind=connection] .signal-head b{color:var(--control)}.signal[data-kind=connection] .signal-icon{color:var(--control)}
+.process{min-width:0;position:relative;border:1px solid #9db4c5;border-radius:7px;padding:12px 10px 10px;text-align:center;background:#f7fafc;color:var(--blue)}.process:before,.process:after{content:'';position:absolute;top:50%;height:11px;width:6px;border:1px solid #8ea7b7;background:#fff;transform:translateY(-50%)}.process:before{left:-4px}.process:after{right:-4px}.process-owner{font-size:13px;line-height:1.45;color:var(--muted);margin-bottom:9px}.process-name{font-size:18px;font-weight:600;line-height:1.4;color:var(--active)}.process-definition{font-size:13px;line-height:1.55;color:var(--muted);margin:5px auto 0;max-width:175px}.process-icon{display:block;width:76px;height:40px;margin:7px auto 2px;color:var(--active)}.process-icon path,.process-icon rect,.process-icon circle{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.process[data-icon=chip]{border-color:#97b5a7;background:#f4f9f6}.process[data-icon=control]{border-color:#b9aa93;background:#faf8f3}.flow-arrow{font-size:25px;color:var(--active);text-align:center;line-height:1}.main-copy{height:53px;margin:0;padding:0 24px 8px;display:flex;align-items:center;font-size:16px;line-height:1.65;color:#41596c}.experiment-controls{height:40px;padding:0 24px 7px;display:flex;gap:14px;align-items:center;justify-content:flex-start;visibility:hidden}.experiment-controls.visible{visibility:visible}.experiment-controls label{display:flex;align-items:center;gap:7px;font-size:13px;line-height:1.6;color:#5c655e}.experiment-controls input{width:16px;height:16px;accent-color:var(--control);margin:0;flex-shrink:0}.experiment-controls button{border:1px solid #b9aa93;border-radius:5px;background:#fff;padding:5px 12px;font-size:13px;line-height:1.5;color:#735e40;min-height:32px;white-space:nowrap}
+.player-controls{height:64px;border-top:1px solid var(--line);padding:10px 19px;background:#f8fafb;display:flex;align-items:center;justify-content:space-between;gap:14px}.step-picker{display:flex;align-items:center;gap:9px;min-width:0;flex:1;font-size:13px;color:var(--muted)}.step-picker label{white-space:nowrap}.step-picker select{font:inherit;font-size:14px;line-height:1.5;min-height:39px;max-width:100%;min-width:0;flex:1;padding:7px 27px 7px 10px;border:1px solid #bacdd9;border-radius:5px;background:#fff;color:var(--ink)}.control-actions{display:flex;align-items:center;gap:7px;flex-shrink:0}.button{font-size:14px;line-height:1.5;min-height:40px;padding:7px 13px;border:1px solid #bccdda;border-radius:5px;background:#fff;color:#3d5970;white-space:nowrap}.button.primary{background:var(--active);border-color:var(--active);color:#fff}.button.quiet{border-color:transparent;background:transparent;color:var(--muted)}.button.experiment{font-size:13px}.button:hover:not(:disabled){filter:brightness(.96)}
+.supporting{margin-top:17px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.supporting details{border-top:1px solid var(--line);padding-top:9px;min-width:0}.supporting summary{font-size:14px;line-height:1.6;color:var(--blue);width:fit-content}.supporting details>p{font-size:15px;line-height:1.8;margin-top:12px;color:#506779}.full-map{margin-top:16px;font-size:13px;line-height:1.6}.full-map-room{border:1px solid #c6d4dd;border-radius:5px;padding:11px;background:#f8fafb;margin-bottom:10px}.full-map-room h3{font-size:14px;line-height:1.5;margin-bottom:8px}.map-parts{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.map-part{border:1px solid #c3d2dc;border-radius:3px;background:#fff;padding:5px 7px;color:var(--muted)}.map-part.active{color:var(--active);border-color:var(--active);background:var(--active-soft)}.map-path{padding:7px 5px;margin-bottom:9px;color:var(--blue)}.full-map-control{border-left:3px solid var(--control);padding:6px 10px;background:#faf8f3;color:var(--control);margin-bottom:10px}.map-part small{display:block;font-size:13px;color:var(--muted)}
+.just-changed .process{animation:focus-in 200ms ease-out}@keyframes focus-in{from{box-shadow:0 0 0 3px #dce8ee}to{box-shadow:0 0 0 0 transparent}}
+@media(max-width:760px){main{padding-inline:18px}.action-scene{grid-template-columns:minmax(0,1fr) 25px 168px 25px minmax(0,1fr);gap:7px;padding-inline:17px}.signal{padding:10px}.signal-body{gap:7px}.signal-icon{width:30px}.bits{font-size:17px}.payload-data{flex-wrap:wrap}.player-controls{gap:10px;padding-inline:13px}.button{padding-inline:10px}.step-picker label{display:none}.process-name{font-size:17px}}
+@media(max-width:600px){.sitebar{height:50px;padding:0 18px;gap:10px}.sitebar h1{font-size:17px}.sitebar a{font-size:13px}main{margin-top:12px;padding:0 14px 20px}.player{border-radius:7px}.player-heading{height:54px;padding:10px 14px;gap:8px}.player-heading h2{font-size:21px;line-height:1.35}.step-count{font-size:13px}.route-rail{height:55px;padding:7px 11px;grid-template-columns:1fr 20px .8fr 20px 1fr;gap:3px;font-size:13px}.route-node{display:block;text-align:center;padding:2px 3px;line-height:1.4}.route-node span{display:block;font-size:13px}.route-link:after{border-left-width:5px}.action-scene{height:340px;padding:11px 18px;grid-template-columns:1fr;grid-template-rows:80px 18px 98px 18px 80px;gap:2px;align-content:center;justify-items:stretch}.signal{min-height:0;height:80px;padding:8px 11px}.signal-head{margin-bottom:5px;font-size:13px;line-height:1.4}.signal-head b{font-size:13px}.signal-body{gap:10px}.signal-icon{width:37px;height:26px}.payload{display:flex;align-items:stretch;min-height:30px}.payload-data{padding:4px 8px;flex:1;flex-wrap:nowrap;gap:6px}.bits{font-size:18px}.payload-monitor{border-top:0;border-left:1px solid #cbdacf;padding:4px 7px;font-size:13px;display:flex;align-items:center;white-space:nowrap}.signal-note{font-size:13px;line-height:1.3;margin-top:3px;min-height:0}.process{height:98px;max-width:260px;width:100%;justify-self:center;padding:6px 11px;display:grid;grid-template-columns:49px 1fr;grid-template-rows:20px 26px 1fr;gap:1px 7px;align-items:center;text-align:left}.process:before,.process:after{top:auto;left:50%;right:auto;width:11px;height:6px;transform:translateX(-50%)}.process:before{top:-4px}.process:after{bottom:-4px}.process-owner{grid-column:1/-1;font-size:13px;line-height:1.4;margin:0;text-align:center}.process-icon{grid-column:1;grid-row:2/4;width:49px;height:36px;margin:0}.process-name{grid-column:2;grid-row:2;font-size:17px;line-height:1.4}.process-definition{grid-column:2;grid-row:3;font-size:13px;line-height:1.4;max-width:none;margin:0}.flow-arrow{transform:rotate(90deg);font-size:20px}.main-copy{height:78px;padding:0 17px 5px;font-size:15px;line-height:1.6;align-items:flex-start;padding-top:3px}.experiment-controls{height:39px;padding:0 17px 6px;gap:8px;justify-content:space-between}.experiment-controls label{font-size:13px;line-height:1.5}.experiment-controls button{padding-inline:8px;font-size:13px}.player-controls{height:100px;display:block;padding:9px 11px}.step-picker{display:flex;margin-bottom:8px}.step-picker select{min-height:35px;font-size:13px;padding:6px 24px 6px 8px}.control-actions{display:grid;grid-template-columns:1fr 1fr .8fr 1.2fr;gap:5px}.button{font-size:13px;min-height:36px;padding:6px 4px;line-height:1.5}.button.experiment{font-size:13px}.supporting{grid-template-columns:1fr 1fr;margin-top:13px;gap:15px}.supporting summary{font-size:13px}.supporting details[open]{grid-column:1/-1}.supporting details>p{font-size:15px}.map-parts{gap:5px}.map-part{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.just-changed .process{animation:none}}
+@media print{.sitebar,.player-controls,.experiment-controls{display:none}.action-scene{height:280px}.supporting{display:block}.supporting details>*{display:block}.player{break-inside:avoid}}
+
+.connection-value{width:100%;font-size:17px;line-height:1.55;color:var(--control);padding:7px 0;font-weight:600}.signal[data-kind=request]{background:#faf8f3;border-color:#d2c7b7}.signal[data-kind=request] .signal-head b{color:var(--control)}.channel-list{width:100%;display:grid;gap:3px}.channel-row{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.4;border:1px solid #c7d5df;border-radius:3px;padding:2px 5px;background:#fff;color:var(--blue)}.channel-row svg{width:42px;height:17px;flex-shrink:0}.channel-row svg path{fill:none;stroke:currentColor;stroke-width:1.6}.channel-row span{white-space:nowrap}.channel-row b{font-size:13px;font-weight:600}.signal[data-kind=bundle] .channel-list{border:1px solid #92aec2;border-radius:5px;padding:4px;background:#f1f6fa}.signal[data-kind=bundle] .channel-row{border:0;background:transparent;padding-inline:3px}.main-copy.control-copy{display:block;padding-top:0}.business-trace{font-size:13px;line-height:1.6;color:var(--control);margin-top:2px}
+@media(max-width:600px){.route-rail{height:58px}.action-scene{grid-template-rows:90px 16px 98px 16px 90px;gap:0;padding-block:10px}.signal{height:90px}.connection-value{font-size:15px;padding:1px 0;line-height:1.5}.channel-list{gap:0}.channel-row{height:16px;line-height:16px;padding:0 3px;border-top:0;border-bottom:0}.channel-row svg{width:36px;height:16px}.signal[data-kind=bundle] .channel-list{padding:0 3px}.signal[data-kind=bundle] .channel-row{padding:0 2px}.business-trace{font-size:13px;line-height:1.5;margin-top:3px}.main-copy.control-copy{padding-top:3px}}
+
+.cx-odu-context{margin:0;min-width:0;width:100%;border:1px solid #dce3e8;border-radius:8px;background:#fff;color:#243343;font:14px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}
+.cx-odu-context *{box-sizing:border-box}
+.cx-odu-context [hidden]{display:none!important}
+.cx-odu-context h3,.cx-odu-context p{margin:0}
+.cx-odu-caption{padding:15px 18px 12px;border-bottom:1px solid #dce3e8}
+.cx-odu-caption h3{font-size:16px;line-height:1.55;font-weight:650}
+.cx-odu-caption p{font-size:13px;color:#617080;margin-top:3px}
+.cx-odu-stage-location{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;color:#33766c;font-size:13px}
+.cx-odu-stage-location strong{font-weight:650}
+.cx-odu-step-status{font-size:13px;line-height:1.5;color:#617080}
+.cx-odu-body{padding:15px 18px 13px;min-width:0}
+.cx-odu-data-end{max-width:400px;width:100%;margin:0 auto}
+.cx-odu-row-heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px;font-size:14px}
+.cx-odu-row-heading strong{font-weight:650}
+.cx-odu-row-heading span{font-size:13px;color:#617080}
+.cx-odu-six{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;width:100%;min-width:0}
+.cx-odu-cell{min-width:0;height:37px;position:relative;border:1px dashed #b9c8d0;border-radius:3px;background:#fff;display:flex;align-items:center;justify-content:center}
+.cx-odu-reference-bit{font:500 18px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#647e76}
+.cx-odu-tracked-bit{position:absolute;inset:-1px;display:flex;align-items:center;justify-content:center;border:1.5px solid #33766c;border-radius:3px;background:#eaf4ee;color:#243343;font:650 18px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.cx-odu-source .cx-odu-cell{border-style:solid;border-color:#c5d8cf;background:#f5f9f7}
+.cx-odu-context[data-stage="0"] .cx-odu-reference-bit{visibility:hidden}
+.cx-odu-source-note{font-size:13px;color:#617080;margin-top:5px}
+.cx-odu-flow{display:flex;justify-content:center;align-items:center;gap:9px;min-height:43px;padding:6px 0;color:#617080;font-size:13px;line-height:1.55;text-align:center}
+.cx-odu-flow-arrow{font-size:27px;line-height:1;color:#91a8a3;flex:0 0 auto}
+.cx-odu-flow.cx-odu-flow-active{color:#33766c;font-weight:600}
+.cx-odu-flow.cx-odu-flow-active .cx-odu-flow-arrow{color:#33766c}
+.cx-odu-frame{border:1px solid #b9cbd2;border-radius:5px;background:#fff;overflow:hidden;min-width:0}
+.cx-odu-frame-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;background:#f7f9fa;border-bottom:1px solid #dce3e8;font-size:14px;line-height:1.55}
+.cx-odu-frame-heading strong{font-weight:650}
+.cx-odu-frame-heading span{font-size:13px;color:#617080}
+.cx-odu-frame-top{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
+.cx-odu-region{padding:12px;min-width:0}
+.cx-odu-region-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px;font-size:14px}
+.cx-odu-region-heading strong{font-weight:650}
+.cx-odu-region-status{font-size:13px;color:#617080;line-height:1.5}
+.cx-odu-region-explain{font-size:13px;line-height:1.65;color:#617080;margin-top:7px!important}
+.cx-odu-payload .cx-odu-six{max-width:400px;margin:0 auto}
+.cx-odu-adaptation{border-left:1px solid #dce3e8;background:#fafcfb}
+.cx-odu-info-value{border:1px dashed #bac9c3;border-radius:3px;padding:7px 9px;font-size:13px;color:#617080;line-height:1.55}
+.cx-odu-monitor{border-top:1px solid #dce3e8;background:#fafbfc;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:14px;align-items:start}
+.cx-odu-monitor .cx-odu-region-heading{grid-column:1 / -1;margin-bottom:6px}
+.cx-odu-monitor-parts{display:flex;gap:7px;flex-wrap:wrap}
+.cx-odu-monitor-parts span{font-size:13px;color:#617080;border:1px dashed #b9c8d0;border-radius:3px;padding:3px 8px;background:#fff;line-height:1.6}
+.cx-odu-monitor .cx-odu-region-explain{margin-top:1px!important}
+.cx-odu-context[data-stage="1"] .cx-odu-adaptation,.cx-odu-context[data-stage="2"] .cx-odu-adaptation,.cx-odu-context[data-stage="3"] .cx-odu-adaptation,.cx-odu-context[data-stage="4"] .cx-odu-adaptation{background:#f0f7f3}
+.cx-odu-context:not([data-stage="0"]) .cx-odu-info-value{border-style:solid;border-color:#adc9be;color:#33766c;background:#fff}
+.cx-odu-context[data-stage="2"] .cx-odu-frame,.cx-odu-context[data-stage="3"] .cx-odu-frame,.cx-odu-context[data-stage="4"] .cx-odu-frame{border-color:#33766c}
+.cx-odu-context[data-stage="2"] .cx-odu-frame-heading,.cx-odu-context[data-stage="3"] .cx-odu-frame-heading,.cx-odu-context[data-stage="4"] .cx-odu-frame-heading{background:#edf5f1;color:#33766c}
+.cx-odu-context[data-stage="2"] .cx-odu-monitor,.cx-odu-context[data-stage="3"] .cx-odu-monitor,.cx-odu-context[data-stage="4"] .cx-odu-monitor{background:#f0f7f3}
+.cx-odu-context[data-stage="2"] .cx-odu-monitor-parts span,.cx-odu-context[data-stage="3"] .cx-odu-monitor-parts span,.cx-odu-context[data-stage="4"] .cx-odu-monitor-parts span{border-style:solid;border-color:#adc9be;color:#33766c}
+.cx-odu-read-placeholder{display:none;font-size:13px;color:#617080;line-height:1}
+.cx-odu-context[data-stage="4"] .cx-odu-payload .cx-odu-read-placeholder{display:block}
+.cx-odu-context[data-stage="4"] .cx-odu-payload .cx-odu-cell{background:#f5f8f6;border-color:#c4d7ce}
+.cx-odu-context[data-stage="4"] .cx-odu-output .cx-odu-row-heading{color:#33766c}
+.cx-odu-context[data-stage="4"] .cx-odu-output .cx-odu-row-heading span{color:#33766c}
+.cx-odu-current-copy{padding:10px 12px;margin-top:13px!important;border:1px solid #dce3e8;border-left:3px solid #33766c;border-radius:3px;font-size:14px;line-height:1.75;background:#fff}
+.cx-odu-comparison{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;border-top:1px solid #dce3e8;margin-top:12px;padding-top:10px;font-size:13px;color:#33766c}
+.cx-odu-comparison code{font:600 16px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:#243343}
+.cx-odu-footnote{padding:0 18px 13px;font-size:13px;line-height:1.65;color:#617080}
+.cx-odu-context.cx-odu-flash .cx-odu-tracked-bit{animation:cx-odu-arrive 180ms ease-out}
+@keyframes cx-odu-arrive{from{background:#cee4d7;box-shadow:0 0 0 2px #91b8aa}to{background:#eaf4ee;box-shadow:0 0 0 0 transparent}}
+@media(max-width:560px){.cx-odu-caption{padding:13px 12px 10px}.cx-odu-body{padding:12px}.cx-odu-stage-location{align-items:flex-start;gap:8px}.cx-odu-step-status{flex:0 0 auto}.cx-odu-row-heading{align-items:flex-start;gap:8px}.cx-odu-row-heading span{max-width:45%;text-align:right}.cx-odu-six{gap:5px}.cx-odu-frame-heading{align-items:flex-start;padding:8px 10px}.cx-odu-frame-heading span{max-width:43%;text-align:right}.cx-odu-frame-top{grid-template-columns:minmax(0,1fr)}.cx-odu-region{padding:10px}.cx-odu-adaptation{border-left:0;border-top:1px solid #dce3e8}.cx-odu-region-heading{margin-bottom:7px}.cx-odu-monitor{grid-template-columns:minmax(0,1fr);gap:0}.cx-odu-monitor .cx-odu-region-explain{margin-top:6px!important}.cx-odu-flow{padding:7px 0;min-height:45px}.cx-odu-current-copy{font-size:14px;padding:9px 10px}.cx-odu-footnote{padding:0 12px 12px}}
+@media(prefers-reduced-motion:reduce){.cx-odu-context .cx-odu-tracked-bit{animation:none!important}}
+
+
+/* Keep equipment context and step controls visible without shrinking the explanation. */
+.sitebar{position:sticky;top:0;z-index:30}main{max-width:1200px;margin-top:22px}.sample-intro{margin:0 0 18px;font-size:15px;color:var(--muted);max-width:850px}.sample-intro strong{color:var(--ink)}.player{overflow:visible}.route-rail,.legacy-map{display:none}.player-heading{height:auto;min-height:56px;background:#fff;border-radius:9px 9px 0 0}.equipment-context{padding:14px 18px 16px;background:#f8fafb;border-bottom:1px solid var(--line);position:relative;z-index:12}.equipment-caption{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px;font-size:14px}.equipment-caption strong{font-size:15px}.context-legend{display:flex;gap:14px;color:var(--muted);font-size:13px}.context-legend span:before{content:'';display:inline-block;width:19px;border-top:2px solid var(--blue);margin:0 5px 3px 0}.context-legend .electrical:before{border-color:var(--teal)}.hardware-layout{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 118px;gap:22px;isolation:isolate}.room-stack{display:grid;gap:16px}.room-equipment{border:1px solid #cad6df;border-radius:6px;padding:9px 10px 11px;background:#fff;min-width:0}.room-equipment h3{font-size:14px;margin-bottom:7px;line-height:1.4}.room-hardware{display:grid;grid-template-columns:80px 40px minmax(0,1fr) 22px 62px;align-items:center;gap:4px}.hardware-device{border:1px solid #bdcbd5;border-radius:4px;background:#f7f9fa;padding:8px 4px;min-height:75px;text-align:center;font-size:13px;line-height:1.45;position:relative}.hardware-device b{display:block;font-size:14px;font-weight:600}.hardware-device:after{content:'';display:block;width:80%;height:13px;border-block:2px solid #a8b8c5;background:repeating-linear-gradient(90deg,transparent 0 8px,#d5dfe5 8px 10px);margin:6px auto 0}.hardware-chassis{min-width:0;border:1px solid #aebfcc;border-radius:5px;background:#f5f8fa;padding:6px 7px 8px;position:relative}.hardware-chassis>p{font-size:13px;line-height:1.4;margin-bottom:6px;color:#4d6577}.chassis-parts{display:grid;grid-template-columns:minmax(0,1fr) 12px minmax(0,1.15fr) 12px minmax(0,1fr);align-items:center;gap:1px}.hardware-part{border:1px solid #b7c8d4;border-radius:3px;background:#fff;text-align:center;font-size:13px;line-height:1.5;padding:5px 2px;min-height:45px;position:relative}.hardware-part b{font-size:14px;display:block;font-weight:600}.hardware-part small{font-size:13px;color:var(--muted);display:block;white-space:nowrap}.hardware-part:before,.hardware-part:after{content:'';height:9px;width:3px;background:#fff;border:1px solid #9eb6c6;position:absolute;top:50%;transform:translateY(-50%)}.hardware-part:before{left:-3px}.hardware-part:after{right:-3px}.hardware-wire{position:relative;height:24px;color:var(--blue);text-align:center;min-width:0;font-size:13px;line-height:1.3}.hardware-wire:before{content:'';position:absolute;left:0;right:0;top:13px;border-top:2px solid currentColor}.hardware-wire:after{content:'';position:absolute;right:-1px;top:10px;border-left:5px solid currentColor;border-block:3px solid transparent}.hardware-wire.electrical{color:var(--teal)}.hardware-wire.reverse:after{right:auto;left:-1px;border-left:0;border-right:5px solid currentColor}.hardware-wire span{position:absolute;top:-7px;left:50%;transform:translateX(-50%);background:#fff;font-size:13px;white-space:nowrap}.hardware-wdm{border:1px solid #b6cad9;border-radius:4px;background:#f4f8fc;text-align:center;padding:8px 2px;font-size:13px;line-height:1.5;min-height:65px;position:relative}.hardware-wdm b{display:block;font-size:14px;font-weight:600}.hardware-wdm svg{width:42px;height:24px;display:block;margin:3px auto 0;stroke:var(--blue);stroke-width:1.8;fill:none}.hardware-layout .active{border-color:var(--active);background:var(--active-soft);box-shadow:0 0 0 2px var(--active-soft)}.hardware-layout .active b{color:var(--active)}.hardware-layout .completed{border-color:#98bdb5}.hardware-layout .completed:after{border-color:#80afa4}.middle-stations{display:flex;flex-direction:column;justify-content:center;gap:34px;position:relative;padding-left:10px}.station{position:relative;z-index:2;border:1px solid #c4d2dc;border-radius:5px;background:#fff;text-align:center;padding:6px 3px;font-size:13px;line-height:1.5}.station b{display:block;font-size:14px}.station small{font-size:13px;display:block;color:var(--muted)}.station.in-use{border-color:var(--blue);background:#edf4f9}.station.broken{border-color:var(--red);background:#fdf2f1}.route-wires{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}.route-wires path{fill:none;stroke:#9dafbd;stroke-width:2}.route-wires .backup{stroke-dasharray:5 4;stroke:#b2c1cc}.route-wires .in-use{stroke:var(--blue);stroke-width:2.5}.route-wires .cut{stroke:#d6aaa6;stroke-dasharray:3 4}.route-wires text{fill:var(--red);font-size:25px;font-weight:700;paint-order:stroke;stroke:#f8fafb;stroke-width:5px}.connection-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:11px;font-size:13px;line-height:1.5}.connection-strip b{color:var(--control);font-weight:600}.connection-strip span{color:var(--muted)}.local-heading{padding:15px 22px 0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.local-heading strong{font-size:15px;color:var(--active)}.local-heading span{font-size:13px;color:var(--muted)}.action-scene{height:280px;padding-top:48px;padding-bottom:28px;isolation:isolate;scroll-margin-top:380px}.scene-boundary{position:absolute;z-index:-1;border:1px solid #b9cbd5;border-radius:7px;background:#f7fafb;pointer-events:none}.scene-boundary span{position:absolute;left:11px;top:7px;font-size:13px;color:#526c80}.signal-head{display:block;margin-bottom:7px}.signal-head>span{display:block;color:var(--ink);margin-bottom:4px;font-weight:600;white-space:normal;line-height:1.4}.signal-head b{font-size:13px}.signal{background:#fff;min-height:137px;position:relative}.signal-body{gap:6px}.signal-icon{width:31px}.payload-data{gap:5px;flex-wrap:wrap}.bits{font-size:18px}.process{background:#fff}.process-owner{font-size:13px}.flow-arrow{font-size:0;position:relative;min-height:16px}.flow-arrow:before{content:'';display:block;border-top:2px solid var(--active);width:100%}.flow-arrow:after{content:'';position:absolute;top:4px;right:-1px;border-left:7px solid var(--active);border-block:4px solid transparent}.main-copy{height:auto;min-height:0;padding:0 22px 13px;display:block;font-size:15px}.main-copy>p{max-width:850px}.step-explanation{border-top:1px solid var(--line);margin:0 22px 17px;padding-top:12px;font-size:14px;color:#536779;line-height:1.8;max-width:900px}.experiment-controls{display:none;height:auto;padding-bottom:14px}.experiment-controls.visible{display:flex}.player-controls{position:sticky;bottom:0;z-index:25;height:auto;min-height:66px;background:#f8fafbf5;backdrop-filter:blur(8px);border-radius:0 0 9px 9px;box-shadow:0 -4px 12px #fff8}.supporting{display:none}.cx-odu-context{margin:14px 22px;width:auto;border-radius:6px}.cx-odu-caption{padding:12px 14px 10px}.cx-odu-caption h3{font-size:16px}.cx-odu-caption p{font-size:13px}.cx-odu-body{display:grid;grid-template-columns:120px 28px minmax(0,1fr) 28px 120px;align-items:center;gap:5px;padding:14px}.cx-odu-data-end{align-self:center}.cx-odu-row-heading{display:block;font-size:14px;line-height:1.5}.cx-odu-row-heading span{display:block;font-size:13px;margin-top:3px}.cx-odu-source-note{line-height:1.65}.cx-odu-six{gap:3px}.cx-odu-source .cx-odu-six,.cx-odu-output .cx-odu-six{grid-template-columns:repeat(3,minmax(0,1fr))}.cx-odu-flow{flex-direction:column;font-size:13px;line-height:1.5;align-self:stretch;justify-content:center}.cx-odu-flow>span:not(.cx-odu-flow-arrow){display:none}.cx-odu-flow-arrow{transform:rotate(-90deg);font-size:25px}.cx-odu-frame-top{grid-template-columns:1fr}.cx-odu-region{padding:10px}.cx-odu-adaptation{border-left:0;border-top:1px solid var(--line)}.cx-odu-info-value{padding:5px 7px}.cx-odu-region-explain{font-size:13px}.cx-odu-monitor{display:block}.cx-odu-monitor .cx-odu-region-explain{margin-top:6px!important}.cx-odu-region-status{font-size:13px}.cx-odu-current-copy{grid-column:1/-1;margin-top:8px!important;padding:9px 12px;font-size:14px}.cx-odu-comparison{grid-column:1/-1;margin-top:4px;padding-top:8px}.cx-odu-footnote{padding:0 14px 12px}.cx-odu-read-placeholder{font:500 18px/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;color:#647e76}.cx-odu-frame-heading{display:block;padding:8px 10px}.cx-odu-frame-heading span{display:block;max-width:none;text-align:left}.cx-odu-frame-heading strong{font-size:14px}
+@media(min-width:740px) and (min-height:760px){.equipment-context{position:sticky;top:56px;box-shadow:0 3px 7px #24334308}}
+@media(max-width:980px){.hardware-layout{grid-template-columns:minmax(0,1fr) 100px;gap:15px}.room-hardware{grid-template-columns:70px 29px minmax(0,1fr) 15px 55px;gap:3px}.room-equipment{padding-inline:7px}.hardware-chassis{padding-inline:5px}.hardware-part b,.hardware-wdm b{font-size:13px}.hardware-wire span{top:-10px}.hardware-chassis>p{font-size:13px}.action-scene{grid-template-columns:minmax(0,1fr) 25px 175px 25px minmax(0,1fr);gap:9px}.cx-odu-body{grid-template-columns:92px 20px minmax(0,1fr) 20px 92px;gap:5px}.cx-odu-source .cx-odu-six,.cx-odu-output .cx-odu-six{gap:3px}.cx-odu-row-heading strong{font-size:13px}.cx-odu-stage-location{font-size:13px}}
+@media(max-width:739px){.equipment-context{padding:12px}.equipment-caption{align-items:flex-start;flex-direction:column;gap:5px}.hardware-layout{grid-template-columns:minmax(0,1fr) 74px;gap:9px}.room-stack{gap:12px}.room-hardware{grid-template-columns:56px 20px minmax(0,1fr) 12px 48px;gap:2px}.hardware-device b{font-size:13px}.hardware-device{font-size:13px;padding-inline:2px}.hardware-chassis{padding-inline:3px}.chassis-parts{grid-template-columns:minmax(0,1fr);gap:3px}.chassis-parts>.hardware-wire{height:12px;transform:rotate(90deg);width:12px;margin:auto}.chassis-parts>.hardware-wire:before{top:6px}.chassis-parts>.hardware-wire:after{top:3px}.hardware-part{min-height:30px;display:flex;justify-content:center;gap:4px;padding:3px}.hardware-part small{font-size:13px}.hardware-chassis>p{font-size:13px}.hardware-part:before,.hardware-part:after{display:none}.hardware-wire span{display:none}.hardware-device{min-height:64px}.hardware-wdm{font-size:13px;min-height:59px}.hardware-wdm svg{width:34px}.middle-stations{padding-left:2px;gap:35px}.station{padding-inline:2px}.station b{font-size:13px}.connection-strip{display:block}.connection-strip span{display:block;margin-top:3px}.action-scene{scroll-margin-top:65px}.local-heading{padding-inline:15px}.cx-odu-context{margin-inline:15px}.main-copy{padding-inline:15px}.step-explanation{margin-inline:15px}.player-controls{padding-inline:12px}.sample-intro{font-size:14px;line-height:1.8}}
+@media(max-width:600px){.player-heading{min-height:58px;padding:12px 14px}.player-heading h2{font-size:20px}.hardware-layout{grid-template-columns:1fr}.room-hardware{grid-template-columns:55px 16px minmax(0,1fr) 12px 45px;gap:2px}.hardware-part{display:block;min-height:39px}.chassis-parts{grid-template-columns:minmax(0,1fr) 8px minmax(0,1.15fr) 8px minmax(0,1fr);gap:0}.chassis-parts>.hardware-wire{transform:none;height:24px;width:8px}.chassis-parts>.hardware-wire:before{top:13px}.chassis-parts>.hardware-wire:after{top:10px}.hardware-chassis>p{font-size:13px}.hardware-part small{font-size:13px;white-space:normal}.hardware-part b{font-size:13px}.hardware-device b,.hardware-wdm b{font-size:13px}.hardware-device:after{height:9px}.room-equipment{padding:7px 5px 8px}.middle-stations{padding:6px 25px;display:grid;grid-template-columns:1fr 1fr;gap:35px}.station{position:relative}.route-wires{display:none}.middle-stations:before{content:'A → C → B';position:absolute;left:0;right:0;top:-12px;text-align:center;font-size:13px;color:var(--blue)}.station small{font-size:13px}.station b{font-size:14px}.connection-strip{margin-top:7px}.context-legend{font-size:13px}.equipment-context{padding-inline:10px}.action-scene{height:420px;padding:35px 18px 24px;grid-template-columns:1fr;grid-template-rows:100px 18px 110px 18px 100px;gap:3px}.signal{height:100px;width:100%;min-height:0;padding:8px 11px}.signal-head{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 5px;gap:10px}.signal-head>span{font-size:13px;margin:0;max-width:55%}.signal-body{gap:10px}.payload-data{flex-wrap:nowrap}.signal-icon{width:35px}.process{height:110px;max-width:275px;background:#fff}.flow-arrow{transform:rotate(90deg);width:18px;margin:auto}.flow-arrow:after{top:4px}.process-owner{margin:0}.process-name{font-size:17px}.process-definition{font-size:13px}.cx-odu-body{grid-template-columns:1fr;gap:0;padding:12px}.cx-odu-data-end{max-width:300px}.cx-odu-source .cx-odu-six,.cx-odu-output .cx-odu-six{grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}.cx-odu-flow{min-height:30px}.cx-odu-flow-arrow{transform:none}.cx-odu-flow>span:not(.cx-odu-flow-arrow){display:block}.cx-odu-flow{flex-direction:row;gap:8px}.cx-odu-region-heading{font-size:14px}.cx-odu-caption p{font-size:13px}.cx-odu-row-heading{display:flex}.cx-odu-row-heading span{max-width:50%;text-align:right}.cx-odu-row-heading strong{font-size:14px}.cx-odu-frame-top{grid-template-columns:1fr}.cx-odu-current-copy{grid-column:auto}.cx-odu-comparison{grid-column:auto}.cx-odu-stage-location{display:none}.cx-odu-source-note{margin-top:4px}.player-controls{height:auto;padding:9px 10px}.control-actions{grid-template-columns:1fr 1fr .8fr 1.2fr}.step-picker{margin-bottom:7px}.step-picker select{font-size:14px;min-height:38px}.button{font-size:14px;min-height:39px}.button.experiment{font-size:13px}.main-copy{font-size:15px;line-height:1.7}.scene-boundary span{font-size:13px}.cx-odu-frame-heading span{max-width:none;text-align:left}.experiment-controls.visible{padding-inline:15px;flex-wrap:wrap}}
+@media print{.equipment-context{position:static}.player-controls{display:none}.scene-boundary{border-color:#aaa}.sample-intro{display:block}}
+
+
+/* Compact the equipment drawing, not its relationships or text. */
+.equipment-context{padding:10px 14px 11px}.equipment-caption{margin-bottom:7px}.room-stack{gap:10px}.room-equipment{padding:6px 8px 7px}.room-equipment h3{margin-bottom:4px}.hardware-device{min-height:61px;padding:5px 3px}.hardware-device:after{height:9px;margin-top:4px}.hardware-chassis{padding:4px 5px 5px}.hardware-chassis>p{margin-bottom:3px}.hardware-part{padding:3px 2px;min-height:42px;line-height:1.3}.hardware-part b{line-height:1.3}.hardware-part small{line-height:1.3}.hardware-wdm{min-height:59px;padding:5px 2px;line-height:1.4}.hardware-wdm svg{height:20px}.connection-strip{margin-top:7px}.action-scene{height:255px;padding-top:42px;padding-bottom:24px}.local-heading{padding-top:11px}.cx-odu-caption p{max-width:660px}.cx-odu-source-note{display:none}.cx-odu-current-copy{display:none}.cx-odu-region-explain{line-height:1.55}.cx-odu-footnote{font-size:13px}.cx-odu-body{padding:10px 12px}.cx-odu-row-heading span{line-height:1.45}.cx-odu-stage-location{margin-bottom:3px}.cx-odu-info-value{line-height:1.5}.cx-odu-comparison{padding-top:5px}.cx-odu-frame-heading{padding-block:6px}.cx-odu-region{padding:8px 10px}.cx-odu-caption{padding:10px 12px}.cx-odu-caption h3{font-size:15px}.cx-odu-cell{height:32px}.step-explanation{margin-bottom:13px;padding-top:9px}.main-copy{padding-bottom:10px}
+@media(max-width:980px){.hardware-part b,.hardware-part small{line-height:1.35}.hardware-chassis>p{line-height:1.4}.room-hardware{grid-template-columns:65px 26px minmax(0,1fr) 15px 54px}}
+@media(max-width:739px){.room-equipment{padding-inline:5px}.room-hardware{grid-template-columns:55px 20px minmax(0,1fr) 12px 48px}.hardware-part{min-height:30px}.equipment-caption{margin-bottom:8px}.hardware-chassis>p{line-height:1.4}}
+@media(max-width:600px){.equipment-context{padding:10px}.room-hardware{grid-template-columns:55px 16px minmax(0,1fr) 10px 43px}.hardware-chassis{padding-inline:3px}.hardware-part{min-height:39px;padding-inline:0}.hardware-part small{line-height:1.4}.hardware-chassis>p{font-size:13px}.hardware-device{min-height:61px}.action-scene{height:412px;padding-top:36px}.cx-odu-current-copy{display:block}.cx-odu-stage-location{display:none}.cx-odu-flow{min-height:36px}.cx-odu-source-note{display:block}}
+
+
+/* Read the same ODU at A and B without making its data region disappear. */
+@media(min-width:601px){.cx-odu-frame-top{grid-template-columns:minmax(0,1.65fr) minmax(0,1fr)}.cx-odu-adaptation{border-top:0;border-left:1px solid var(--line)}.cx-odu-caption h3{display:none}.cx-odu-caption p{margin-top:2px}.cx-odu-region-heading{display:block;margin-bottom:6px;line-height:1.5}.cx-odu-region-status{display:block;margin-top:2px;line-height:1.4}.cx-odu-region-explain{margin-top:5px!important}.cx-odu-monitor .cx-odu-region-heading{display:flex;gap:7px}.cx-odu-monitor .cx-odu-region-status{margin:0}.cx-odu-monitor .cx-odu-region-explain{margin-top:5px!important}.cx-odu-frame-heading{display:flex;align-items:baseline;gap:7px}.cx-odu-frame-heading span{font-size:13px;line-height:1.4}.cx-odu-frame-heading strong{font-size:14px;line-height:1.5}.cx-odu-info-value{font-size:13px;padding:4px 6px}.cx-odu-region{padding:7px 8px}.cx-odu-footnote{padding-top:0;padding-bottom:9px}}
+@media(max-width:600px){.hardware-layout{display:flex;flex-direction:column;gap:0}.room-stack{display:contents}.room-stack>.room-equipment:first-child{order:0}.room-stack>.room-equipment:last-child{order:2}.middle-stations{order:1;margin:23px 28px;padding:0;gap:42px}.middle-stations:before{display:none}.route-wires{display:block}.station{min-height:45px}.equipment-caption{flex-direction:column}.connection-strip{margin-top:8px}}
+
+
+.inline-room{display:none}
+@media(min-width:740px){.room-equipment h3{display:none}.inline-room{display:inline;font-weight:600;color:var(--ink)}.equipment-context{padding-top:9px;padding-bottom:10px}}
+@media(min-width:740px) and (min-height:650px){.equipment-context{position:sticky;top:56px;box-shadow:0 3px 7px #24334308}}
+
+@media(max-width:600px){.hardware-device,.hardware-wdm{padding-inline:0}.hardware-device b,.hardware-wdm b{white-space:nowrap}}
+</style>
+</head>
+<body>
+<header class="sitebar"><h1>光网络基础知识</h1><a href="光网络基础知识图解.html#business-journey">查看完整讲义</a></header>
+<main>
+<p class="sample-intro"><strong>同一条业务，从 A 到 B。</strong>速率为 10 Gb/s（每秒约 100 亿个 0 或 1）。业务就是要送到另一端的数据；这里用甲的六位 <strong>101101</strong> 跟踪过程。业务设备产生或接收数据，OTN（光传送网）设备负责把它组织起来送往另一机房。客户口接业务设备，线路口接机房间的传输线路。</p>
+<section class="player" id="player" data-role="optical" aria-label="业务甲从 A 到 B 的分步图解">
+<div class="player-heading"><h2 id="action-title">客户口收到光，转成电</h2><span class="step-count" id="step-count">3 / 11</span></div>
+<figure class="equipment-context" id="equipment-context" aria-label="A 和 B 的业务设备、OTN 机框内接口与中间光纤连接">
+<figcaption class="equipment-caption"><strong>甲的完整路线</strong><div class="context-legend"><span>光纤 · 光</span><span class="electrical">机框内 · 电</span></div></figcaption>
+<div class="hardware-layout" id="hardware-layout"><svg class="route-wires" id="route-wires" aria-hidden="true"><path id="wire-ac"/><path id="wire-cb"/><path id="wire-ad" class="backup"/><path id="wire-db" class="backup"/><text id="wire-break" hidden>×</text></svg><div class="room-stack"><section class="room-equipment"><h3>A 机房</h3><div class="room-hardware">
+<div class="hardware-device" data-place="a-device"><b>业务设备</b><span>发送甲</span></div>
+<div class="hardware-wire"><span>短光纤</span></div>
+<div class="hardware-chassis"><p><span class="inline-room">A 机房 · </span>OTN 光传送设备 · 同一机框</p><div class="chassis-parts">
+<div class="hardware-part" data-place="a-client"><b>客户口</b><small>光 → 电</small></div><div class="hardware-wire electrical"></div>
+<div class="hardware-part" data-place="a-digital"><b>数字处理</b><small>组织数据</small></div><div class="hardware-wire electrical"></div>
+<div class="hardware-part" data-place="a-line"><b>线路口</b><small>电 → 光</small></div></div></div>
+<div class="hardware-wire"></div><div class="hardware-wdm" id="hw-a-wdm" data-place="a-wdm"><b>合波器</b><span>多路光</span><svg viewBox="0 0 44 24" aria-hidden="true"><path d="M2 4H11L26 12H41M2 12H41M2 20H11L26 12"/></svg></div>
+</div></section><section class="room-equipment"><h3>B 机房</h3><div class="room-hardware">
+<div class="hardware-device" data-place="b-device"><b>业务设备</b><span>接收甲</span></div>
+<div class="hardware-wire reverse"><span>短光纤</span></div>
+<div class="hardware-chassis"><p><span class="inline-room">B 机房 · </span>OTN 光传送设备 · 同一机框</p><div class="chassis-parts">
+<div class="hardware-part" data-place="b-client"><b>客户口</b><small>电 → 光</small></div><div class="hardware-wire electrical reverse"></div>
+<div class="hardware-part" data-place="b-digital"><b>数字处理</b><small>读回数据</small></div><div class="hardware-wire electrical reverse"></div>
+<div class="hardware-part" data-place="b-line"><b>线路口</b><small>光 → 电</small></div></div></div>
+<div class="hardware-wire reverse"></div><div class="hardware-wdm" id="hw-b-wdm" data-place="b-wdm"><b>分波器</b><span>多路光</span><svg viewBox="0 0 44 24" aria-hidden="true"><path d="M2 12H18L33 4H41M2 12H41M18 12L33 20H41"/></svg></div>
+</div></section></div><div class="middle-stations"><div class="station" id="hw-station-c"><b>C 中间站</b><small id="hw-c-status">让光通过</small></div><div class="station" id="hw-station-d"><b>D 备用站</b><small id="hw-d-status">备用路线</small></div></div></div>
+<div class="connection-strip"><b id="context-control">ASON：安排连接的控制功能</b><span id="context-path">A → C → B · 业务沿这条路线传送</span></div>
+</figure><div class="local-heading"><strong id="local-owner">放大 A 业务设备</strong><span id="local-neighbors">原始数据 → 发送光接口 → 短光纤</span></div><div class="route-rail" hidden aria-label="当前动作在线路中的位置"><div class="route-node current" id="room-a"><b>A 机房</b><span id="place-a">客户口</span></div><div class="route-link waiting" id="link-ac" aria-hidden="true"></div><div class="route-node" id="room-c"><b id="middle-room">C 机房</b><span id="place-c">光继续通过</span></div><div class="route-link waiting" id="link-cb" aria-hidden="true"></div><div class="route-node" id="room-b"><b>B 机房</b><span id="place-b">接收端</span></div></div>
+<figure class="action-scene" id="action-scene" aria-label="当前设备中的接口、信号变化和相邻部件"><div class="scene-boundary" id="scene-boundary"><span id="scene-owner"></span></div>
+<div class="signal" id="signal-in" data-kind="light"><div class="signal-head"><span>输入</span><b id="form-in">客户光信号</b></div><div class="signal-body"><svg class="signal-icon" id="shape-in" viewBox="0 0 60 40" aria-hidden="true"><path id="light-in" d="M1 20Q6 3 11 20T21 20T31 20T41 20T51 20T61 20"/><path id="electric-in" d="M1 30H9V10H18V30H28V10H38V30H49V10H59" hidden/><path id="connection-in" d="M7 20H21M38 20H52M21 13L38 27M21 27L38 13" hidden/></svg><div class="payload" id="payload-in"><div class="payload-data"><b>甲</b><span class="bits">101101</span></div><div class="payload-monitor" id="monitor-in" hidden>监测</div></div><div class="connection-value" id="connection-value-in" hidden></div><div class="channel-list" id="channels-in" hidden><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₁ · 甲 <b>101101</b></span></div><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₂ · 乙</span></div><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₃ · 丙</span></div></div></div><p class="signal-note" id="note-in">携带甲的客户光</p></div>
+<div class="flow-arrow" aria-hidden="true">→</div>
+<div class="process" id="process" data-icon="port"><p class="process-owner" id="process-owner">A 光传送设备</p><svg class="process-icon" viewBox="0 0 80 42" aria-hidden="true"><g id="icon-port"><rect x="17" y="7" width="46" height="28" rx="3"/><rect x="24" y="14" width="15" height="15" rx="1"/><path d="M26 25H37M43 18H56M43 24H56M12 16V26M68 16V26"/></g><g id="icon-chip" hidden><rect x="25" y="9" width="30" height="24" rx="2"/><path d="M32 4V9M40 4V9M48 4V9M32 33V38M40 33V38M48 33V38M20 15H25M20 22H25M20 28H25M55 15H60M55 22H60M55 28H60M32 17H48M32 24H43"/></g><g id="icon-mux" hidden><path d="M4 8H21L48 21H75M4 21H75M4 34H21L48 21"/><rect x="28" y="4" width="29" height="34" rx="3"/></g><g id="icon-demux" hidden><path d="M5 21H32L59 8H76M5 21H76M32 21L59 34H76"/><rect x="23" y="4" width="29" height="34" rx="3"/></g><g id="icon-device" hidden><rect x="13" y="5" width="54" height="32" rx="3"/><path d="M20 14H50M20 23H50M20 31H50"/><circle cx="58" cy="14" r="1"/><circle cx="58" cy="23" r="1"/><circle cx="58" cy="31" r="1"/></g><g id="icon-control" hidden><rect x="25" y="4" width="30" height="18" rx="2"/><path d="M40 22V30H11V36M40 30H69V36M35 10L40 15L46 9"/></g></svg><h3 class="process-name" id="process-name">客户口</h3><p class="process-definition" id="process-definition">接业务设备的接口</p></div>
+<div class="flow-arrow" aria-hidden="true">→</div>
+<div class="signal" id="signal-out" data-kind="data"><div class="signal-head"><span>输出</span><b id="form-out">客户电信号</b></div><div class="signal-body"><svg class="signal-icon" id="shape-out" viewBox="0 0 60 40" aria-hidden="true"><path id="light-out" d="M1 20Q6 3 11 20T21 20T31 20T41 20T51 20T61 20" hidden/><path id="electric-out" d="M1 30H9V10H18V30H28V10H38V30H49V10H59"/><path id="connection-out" d="M7 20H21M38 20H52M21 13L38 27M21 27L38 13" hidden/><path id="available-out" d="M7 20H20L31 9L42 20H54M7 20H20L31 31L42 20H54" hidden/></svg><div class="payload" id="payload-out"><div class="payload-data"><b>甲</b><span class="bits">101101</span></div><div class="payload-monitor" id="monitor-out" hidden>监测</div></div><div class="connection-value" id="connection-value-out" hidden></div><div class="channel-list" id="channels-out" hidden><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₁ · 甲 <b>101101</b></span></div><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₂ · 乙</span></div><div class="channel-row"><svg viewBox="0 0 54 18" aria-hidden="true"><path d="M0 9Q4 1 8 9T16 9T24 9T32 9T40 9T48 9T56 9"/></svg><span>λ₃ · 丙</span></div></div></div><p class="signal-note" id="note-out">交给数字处理</p></div>
+</figure>
+
+<figure class="cx-odu-context" id="cx-odu-context" data-stage="0" aria-labelledby="cx-odu-heading">
+  <figcaption class="cx-odu-caption">
+    <div class="cx-odu-stage-location"><strong id="cx-odu-location">A 设备内部 · 客户侧接收之后</strong><span class="cx-odu-step-status" id="cx-odu-step-status">准备写入</span></div>
+    <h3 id="cx-odu-heading">甲的数据写进 ODU，再从 ODU 读回</h3>
+    <p>ODU（光通道数据单元）：把客户数据与路径监测信息组织在一起的数字结构。</p>
+  </figcaption>
+  <div class="cx-odu-body">
+    <div class="cx-odu-data-end cx-odu-source">
+      <div class="cx-odu-row-heading"><strong>A 原数据</strong><span>六位 101101</span></div>
+      <div class="cx-odu-six" id="cx-odu-source-cells" role="group" aria-label="A 原数据 101101，始终保留作对照">
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">1</span><span class="cx-odu-tracked-bit" data-bit-index="0" aria-hidden="true">1</span></div>
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">0</span><span class="cx-odu-tracked-bit" data-bit-index="1" aria-hidden="true">0</span></div>
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">1</span><span class="cx-odu-tracked-bit" data-bit-index="2" aria-hidden="true">1</span></div>
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">1</span><span class="cx-odu-tracked-bit" data-bit-index="3" aria-hidden="true">1</span></div>
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">0</span><span class="cx-odu-tracked-bit" data-bit-index="4" aria-hidden="true">0</span></div>
+        <div class="cx-odu-cell"><span class="cx-odu-reference-bit" aria-hidden="true">1</span><span class="cx-odu-tracked-bit" data-bit-index="5" aria-hidden="true">1</span></div>
+      </div>
+      <p class="cx-odu-source-note">客户口收光后读出的电信号。</p>
+    </div>
+    <div class="cx-odu-flow" id="cx-odu-write-flow"><span class="cx-odu-flow-arrow" aria-hidden="true">↓</span><span id="cx-odu-write-label">下一步：A 按规则写入</span></div>
+    <div class="cx-odu-frame" id="cx-odu-frame">
+      <div class="cx-odu-frame-heading"><strong id="cx-odu-format-name">A 将要形成的数字格式</strong><span id="cx-odu-format-status">尚未写入</span></div>
+      <div class="cx-odu-frame-top">
+        <section class="cx-odu-region cx-odu-payload" aria-labelledby="cx-odu-payload-heading">
+          <div class="cx-odu-region-heading"><strong id="cx-odu-payload-heading">客户数据区</strong><span class="cx-odu-region-status" id="cx-odu-payload-status">六个空位</span></div>
+          <div class="cx-odu-six" id="cx-odu-payload-cells" role="group" aria-label="客户数据区，六个位置尚未写入">
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+            <div class="cx-odu-cell"><span class="cx-odu-read-placeholder" aria-hidden="true"></span></div>
+          </div>
+          <p class="cx-odu-region-explain" id="cx-odu-payload-explain">数据区为空，等待写入甲。</p>
+        </section>
+        <section class="cx-odu-region cx-odu-adaptation" aria-labelledby="cx-odu-adaptation-heading">
+          <div class="cx-odu-region-heading"><strong id="cx-odu-adaptation-heading">适配信息</strong><span class="cx-odu-region-status" id="cx-odu-adaptation-status">待写入</span></div>
+          <div class="cx-odu-info-value" id="cx-odu-adaptation-value">规则信息待写入</div>
+          <p class="cx-odu-region-explain">适配：按规定规则安排业务数据。</p>
+        </section>
+      </div>
+      <section class="cx-odu-region cx-odu-monitor" aria-labelledby="cx-odu-monitor-heading">
+        <div class="cx-odu-region-heading"><strong id="cx-odu-monitor-heading">路径监测区</strong><span class="cx-odu-region-status" id="cx-odu-monitor-status">待添加</span></div>
+        <div class="cx-odu-monitor-parts"><span id="cx-odu-path-check">路径标识：待添加</span><span id="cx-odu-error-check">检错信息：待添加</span></div>
+        <p class="cx-odu-region-explain">检查路径是否相符、有没有传送差错。</p>
+      </section>
+    </div>
+    <div class="cx-odu-flow" id="cx-odu-read-flow"><span class="cx-odu-flow-arrow" aria-hidden="true">↓</span><span id="cx-odu-read-label">传送到 B 后，按对应规则取回</span></div>
+    <div class="cx-odu-data-end cx-odu-output">
+      <div class="cx-odu-row-heading"><strong>B 读回数据</strong><span id="cx-odu-output-status">尚未取回</span></div>
+      <div class="cx-odu-six" id="cx-odu-output-cells" role="group" aria-label="B 读回的客户数据，六个空位，尚未取回">
+        <div class="cx-odu-cell"></div><div class="cx-odu-cell"></div><div class="cx-odu-cell"></div><div class="cx-odu-cell"></div><div class="cx-odu-cell"></div><div class="cx-odu-cell"></div>
+      </div>
+    </div>
+    <p class="cx-odu-current-copy" id="cx-odu-current-copy" aria-live="polite">A 已接收客户业务，在内部读出六位 101101。客户数据区仍为空，B 输出位置也为空。</p>
+    <div class="cx-odu-comparison" id="cx-odu-comparison" hidden><span>A <code>101101</code></span><span aria-hidden="true">＝</span><span>B <code>101101</code></span><span>内容与顺序相同</span></div>
+  </div>
+  <p class="cx-odu-footnote" id="cx-odu-footnote">分区只表示功能组成，不代表字段真实大小或顺序。六位取自连续业务，用来观察写入与取回。</p>
+</figure>
+
+
+<div class="main-copy" id="copy-area"><p id="main-copy">客户口接收业务设备送来的光，转成电信号；甲仍是 101101，接下来才组织传送格式。</p><p class="business-trace" id="business-trace" hidden>业务甲 101101 · 等待沿连接传送</p></div>
+<p class="step-explanation" id="detail-visible"></p>
+<div class="experiment-controls" id="experiment-controls" aria-hidden="true"><label><input type="checkbox" id="spare-capacity" checked disabled>备用 A—D—B 有足够容量</label><button type="button" id="try-recovery" disabled>尝试恢复</button></div>
+<div class="player-controls"><div class="step-picker"><label for="step-select">当前步骤</label><select id="step-select" aria-label="选择当前业务步骤"><option value="0">1　A 业务设备发光</option><option value="1">2　ASON 安排连接</option><option value="2" selected>3　A 客户口接收光</option><option value="3">4　OTN 形成 ODU</option><option value="4">5　A 线路口发光</option><option value="5">6　WDM 合波共纤</option><option value="6">7　B 分波分出 λ₁</option><option value="7">8　B 线路口接收光</option><option value="8">9　数字处理取回甲</option><option value="9">10　B 客户口发光</option><option value="10">11　B 业务设备读回甲</option></select></div><div class="control-actions"><button class="button" type="button" id="previous-step">上一步</button><button class="button primary" type="button" id="next-step">下一步</button><button class="button quiet" type="button" id="restart">重看</button><button class="button experiment" type="button" id="experiment">断纤实验</button></div></div>
+<p id="step-announcement" class="sr-only" aria-live="polite" aria-atomic="true">第 3 步：A 客户口把客户光转成电信号。</p>
+</section>
+<div class="supporting">
+<details id="full-line"><summary>整条线路</summary><div class="full-map"><p class="full-map-control" id="map-control">ASON 自动安排连接；业务沿连接传送。</p><div class="full-map-room"><h3>A 机房</h3><div class="map-parts"><span class="map-part" data-place="a-device">业务设备</span><span>→</span><span class="map-part active" data-place="a-client">客户口<small>光 → 电</small></span><span>→</span><span class="map-part" data-place="a-digital">数字处理</span><span>→</span><span class="map-part" data-place="a-line">线路口<small>电 → 光</small></span><span>→</span><span class="map-part" data-place="a-wdm">合波</span></div></div><p class="map-path" id="map-path">A → C → B · 本例在 C 让光继续通过</p><div class="full-map-room"><h3>B 机房</h3><div class="map-parts"><span class="map-part" data-place="b-wdm">分波</span><span>→</span><span class="map-part" data-place="b-line">线路口<small>光 → 电</small></span><span>→</span><span class="map-part" data-place="b-digital">数字处理</span><span>→</span><span class="map-part" data-place="b-client">客户口<small>电 → 光</small></span><span>→</span><span class="map-part" data-place="b-device">业务设备</span></div></div></div></details>
+<details id="step-details"><summary>本步详解</summary><p id="detail-copy">本例两侧都使用光接口。A 业务设备发出的客户光，先由光传送设备客户口接收，变成设备内部处理的电信号；客户口之后的数字处理才负责组织 ODU。</p><p>10 Gb/s 表示每秒传送约 100 亿个比特。比特是数据中的一个 0 或 1；甲的 101101 用于追踪其中一小段。波形和数字分区表示信号与数据的关系。</p></details>
+</div>
+<noscript><p>当前显示 A 业务设备。逐步操作需要浏览器启用 JavaScript；可直接阅读<a href="光网络基础知识图解.html">完整讲义</a>。</p></noscript>
+</main>
+<script>
+
+function renderOduContext(stage, animate) {
+  var host = document.getElementById('cx-odu-context');
+  if (!host) return;
+  var number = Number(stage);
+  var current = isFinite(number) ? Math.max(0, Math.min(4, Math.floor(number))) : 0;
+  var states = [
+    {location:'A 设备内部 · 客户侧接收之后', status:'准备写入', format:'A 将要形成的数字格式', formatStatus:'尚未写入', payload:'六个空位', payloadExplain:'数据区为空，等待写入甲。', write:'下一步：A 按规则写入', read:'传送到 B 后，按对应规则取回', copy:'A 已接收客户业务，在内部读出六位 101101。客户数据区仍为空，B 输出位置也为空。'},
+    {location:'A 设备内部 · 业务适配', status:'已写入六位', format:'A 正在组织的数字格式', formatStatus:'数据与适配信息已写入', payload:'已写入', payloadExplain:'101101 已按原顺序写入。', write:'A：把六位按规则写入数据区', read:'传送到 B 后，按对应规则取回', copy:'A 把同一组六位按原顺序写进客户数据区，同时填入适配相关信息。路径监测信息尚未添加。'},
+    {location:'A 设备内部 · 路径监测', status:'已形成 ODU', format:'A 形成的 ODU', formatStatus:'可交给后续线路处理', payload:'仍是这六位', payloadExplain:'增加监测，甲的 101101 不变。', write:'A 已完成数据写入', read:'传送到 B 后，按对应规则取回', copy:'A 增加路径监测信息，整个数字单元形成 ODU。六位业务数据、适配相关信息、路径监测信息分别位于对应区域。'},
+    {location:'B 设备内部 · 线路接收之后', status:'已恢复，待取回', format:'B 从线路中恢复出的 ODU', formatStatus:'业务尚未取回', payload:'六位待取回', payloadExplain:'甲仍在数据区，B 尚未读回。', write:'A 原数据留在上方作对照', read:'下一步：B 按对应规则读取', copy:'B 从收到的线路信号恢复出 ODU。此刻 101101 已在数据区，适配和监测信息也已恢复，但 B 客户数据输出位置仍为空。'},
+    {location:'B 设备内部 · 业务适配与监测', status:'已取回六位', format:'B 已读取业务的 ODU', formatStatus:'本段业务已取回', payload:'本段已读取', payloadExplain:'按对应规则读回 101101。', write:'A 原数据留在上方作对照', read:'B：按对应规则读回这六位', copy:'B 按对应规则读回同样的六位，放到客户数据输出位置，供后续客户口输出。适配和监测信息由设备处理；本例路径相符，未检出差错。'}
+  ];
+  var state = states[current];
+  var query = function (id) { return host.querySelector('#' + id); };
+  host.dataset.stage = String(current);
+  host.classList.remove('cx-odu-flash');
+  if (host.cxOduAnimationFrame) cancelAnimationFrame(host.cxOduAnimationFrame);
+  host.cxOduAnimationFrame = 0;
+  var tokens = host.querySelectorAll('.cx-odu-tracked-bit');
+  var targetId = current === 0 ? 'cx-odu-source-cells' : current === 4 ? 'cx-odu-output-cells' : 'cx-odu-payload-cells';
+  var destinations = query(targetId).querySelectorAll('.cx-odu-cell');
+  Array.prototype.forEach.call(tokens, function (token) {
+    var index = Number(token.getAttribute('data-bit-index'));
+    if (destinations[index]) destinations[index].appendChild(token);
+  });
+  query('cx-odu-location').textContent = state.location;
+  query('cx-odu-step-status').textContent = state.status;
+  query('cx-odu-format-name').textContent = state.format;
+  query('cx-odu-format-status').textContent = state.formatStatus;
+  query('cx-odu-payload-status').textContent = state.payload;
+  query('cx-odu-payload-explain').textContent = state.payloadExplain;
+  query('cx-odu-write-label').textContent = state.write;
+  query('cx-odu-read-label').textContent = state.read;
+  query('cx-odu-current-copy').textContent = state.copy;
+  query('cx-odu-write-flow').classList.toggle('cx-odu-flow-active', current === 1);
+  query('cx-odu-read-flow').classList.toggle('cx-odu-flow-active', current === 4);
+  query('cx-odu-adaptation-status').textContent = current === 0 ? '待写入' : current === 4 ? '配合读取' : '已写入';
+  query('cx-odu-adaptation-value').textContent = current === 0 ? '规则信息待写入' : '规则信息已写入';
+  query('cx-odu-monitor-status').textContent = current < 2 ? '待添加' : current === 2 ? '已添加' : current === 3 ? '待检查' : '检查完成';
+  query('cx-odu-path-check').textContent = current < 2 ? '路径标识：待添加' : current === 4 ? '路径核对：相符' : current === 3 ? '路径标识：已恢复' : '路径标识：已添加';
+  query('cx-odu-error-check').textContent = current < 2 ? '检错信息：待添加' : current === 4 ? '本例未检出差错' : current === 3 ? '检错信息：已恢复' : '检错信息：已添加';
+  query('cx-odu-output-status').textContent = current === 4 ? '已取回，可交给客户口' : current === 3 ? '等待从 ODU 取回' : '尚未取回';
+  query('cx-odu-payload-cells').setAttribute('aria-label', current === 0 ? '客户数据区，六个位置尚未写入' : current === 4 ? '数据区仍为 101101，B 已按对应规则读回这六位' : '客户数据区，按顺序存放六位 101101');
+  query('cx-odu-output-cells').setAttribute('aria-label', current === 4 ? 'B 客户数据输出位置，已取回六位 101101，与 A 内容和顺序相同' : 'B 客户数据输出位置，六个空位，尚未取回');
+  query('cx-odu-comparison').hidden = current !== 4;
+  query('cx-odu-footnote').textContent = '功能分区示意；六位取自连续业务，分区大小不代表实际比例。';
+  query('cx-odu-payload-cells').querySelectorAll('.cx-odu-read-placeholder').forEach((n,i)=>{n.textContent='101101'[i];});
+  var reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (animate && !reducedMotion) {
+    host.cxOduAnimationFrame = requestAnimationFrame(function () {
+      host.cxOduAnimationFrame = 0;
+      if (host.dataset.stage === String(current)) host.classList.add('cx-odu-flash');
+    });
+  }
+}
+
+
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const data=(kind,title,note,monitor=false,value='')=>({kind,title,note,monitor,value});
+const baseSteps=[
+ {label:'A 业务设备发光',title:'A 先发出客户光',room:'a',place:'a-device',role:'optical',owner:'A 业务设备',name:'发送光接口',definition:'把电信号变成客户光',icon:'device',input:data('data','客户电信号','甲的原始客户数据'),output:data('light','客户光信号','经短光纤送往客户口'),copy:'A 把要送给 B 的业务甲变成客户光；图里跟踪的 101101 始终是同一份内容。',detail:'本例业务甲速率为 10 Gb/s，A 与光传送设备之间使用光接口。A 业务设备先把内部的电信号转换成客户光，经短光纤送往客户口。'},
+ {label:'ASON 安排连接',title:'先安排 A—C—B 连接',room:'control',place:'control',role:'control',owner:'连接控制',name:'ASON',definition:'自动交换光网络的连接控制',icon:'control',input:data('request','连接需求与可用资源','光纤和容量可用',false,'需要从 A 连接到 B'),output:data('connection','连接结果','连接建立，可沿线传送',false,'A—C—B 已连接'),copy:'ASON 按可用线路和容量安排传送连接。',detail:'ASON 是自动交换光网络的控制功能，本例由它选择 A—C—B 的可用路线，并安排沿途连接和容量。已建立的连接可以持续使用；不用为每一小段数据重新建一次。'},
+ {label:'A 客户口接收光',title:'客户口收到光，转成电',room:'a',place:'a-client',role:'optical',owner:'A 光传送设备',name:'客户口',definition:'接业务设备的接口',icon:'port',input:data('light','客户光信号','来自 A 业务设备'),output:data('data','客户电信号','交给数字处理'),copy:'客户口接收业务设备送来的光，转成电信号；甲仍是 101101，接下来才组织传送格式。',detail:'本例两侧都使用光接口。A 业务设备发出的客户光，先由光传送设备客户口接收，变成设备内部处理的电信号；客户口之后的数字处理才负责组织 ODU。'},
+ {label:'OTN 形成 ODU',title:'把甲组织成 ODU',room:'a',place:'a-digital',role:'digital',owner:'A 光传送设备',name:'OTN 数字处理',definition:'光传送网按规定格式组织数据',icon:'chip',input:data('data','客户数据','甲的客户数据'),output:data('odu','ODU · 数字结构','承载甲的数据与监测',true),copy:'ODU（光通道数据单元）是承载数据与监测的数字结构；甲的数据仍是 101101。',detail:'OTN（光传送网）用规定格式组织、传送和检查业务。ODU（光通道数据单元）中包含客户数据及监测信息；监测用于检查甲从 A 到 B 的传送情况。分区表示数字结构，处理由设备硬件完成。'},
+ {label:'A 线路口发光',title:'线路口发出 λ₁ 光',room:'a',place:'a-line',role:'optical',owner:'A 光传送设备',name:'线路口',definition:'接传输线路的接口',icon:'port',input:data('odu','线路电信号','已经组织成线路发送格式',true),output:data('light','λ₁ · 线路光信号','携带甲的线路光',true),copy:'线路口把处理好的电信号变成 λ₁ 光；λ₁ 标明这路光的波长，便于合波与分波。',detail:'设备先把 ODU 组织成线路使用的数字格式，再交给线路口发送。λ 表示波长，即光波重复一次所对应的长度；λ₁ 只是标明本例第一路光通道，不表示可见光的颜色。'},
+ {label:'WDM 合波共纤',title:'多路光一起通过光纤',room:'a',place:'a-wdm',role:'optical',owner:'A 合波器 → 经 C 传送',name:'WDM · 合波',definition:'波分复用：不同波长光共纤',icon:'mux',input:data('channels','三个光口的输入光','各走各的短光纤',true),output:data('bundle','共用同一根光纤','甲仍由 λ₁ 携带',true),copy:'合波器把不同波长的光接入同一根光纤，经 C 继续到 B；甲仍由 λ₁ 携带。',detail:'WDM（波分复用）让不同波长的光共用光纤。合波后的各光通道保留自己的波长和业务内容。本例在 C 让光继续通过，不在 C 取回甲的数据。'},
+ {label:'B 分波分出 λ₁',title:'B 分出 λ₁，仍然是光',room:'b',place:'b-wdm',role:'optical',owner:'B 光传送设备',name:'分波器',definition:'按波长分到对应光口',icon:'demux',input:data('bundle','同一根光纤中的光','到达 B 的多路光',true),output:data('light','λ₁ · 线路光信号','送到对应线路口',true),copy:'分波器按波长分出 λ₁，交给相应线路口；这一步分出来的仍是光。',detail:'B 的分波器把 λ₁ 交给甲对应的接收线路口，λ₂、λ₃ 交给其他对应光口。分波器按光通道处理连接，数据恢复由后面的光接收和数字处理完成。'},
+ {label:'B 线路口接收光',title:'B 收到光，先转成电',room:'b',place:'b-line',role:'optical',owner:'B 光传送设备',name:'线路口',definition:'接传输线路的接口',icon:'port',input:data('light','λ₁ · 线路光信号','光中携带 ODU 甲',true),output:data('pending','电信号 · 待数字恢复','携带内容尚待恢复',true),copy:'线路口先完成光 → 电；接收电信号还要恢复数字格式，甲此时尚未交付。',detail:'光接收把光信号转换成供数字处理使用的电信号。此时还需要恢复格式、检查传送情况和取出客户数据。图中保留 101101 用于追踪携带内容，并不表示这一步已经恢复并交付了甲。'},
+ {label:'数字处理取回甲',title:'B 恢复格式，取回甲',room:'b',place:'b-digital',role:'digital',owner:'B 光传送设备',name:'OTN 数字处理',definition:'恢复、检查传送格式',icon:'chip',input:data('pending','线路接收电信号','数字格式尚待恢复',true),output:data('data','甲的客户数据','已从 ODU 取回 101101'),copy:'数字处理恢复、检查格式，并从 ODU 取回甲；现在得到客户数据 101101。',detail:'B 先恢复线路格式，检查传送情况，并在能力范围内纠正差错，再取回 ODU。随后按与 A 对应的适配规则取出客户数据。下一步仍要通过客户口把甲送给 B 的业务设备。'},
+ {label:'B 客户口发光',title:'B 客户口送出客户光',room:'b',place:'b-client',role:'optical',owner:'B 光传送设备',name:'客户口',definition:'接业务设备的接口',icon:'port',input:data('data','甲的客户电信号','已经取回的客户数据'),output:data('light','客户光信号','经短光纤送给业务设备'),copy:'客户口把取回的甲变成客户光，送往 B 的业务设备。',detail:'本例客户侧使用光接口，因此 B 客户口需要把已经恢复的客户电信号再变成客户光。客户光通过短光纤到达 B 的业务设备，此时还未完成业务设备的接收。'},
+ {label:'B 业务设备读回甲',title:'B 读回同一份甲',room:'b',place:'b-device',role:'optical',owner:'B 业务设备',name:'接收光接口',definition:'接收客户光，读回数据',icon:'device',input:data('light','客户光信号','到达业务设备的客户光'),output:data('data','B 已读回的客户数据','甲 101101 · 完成交付'),copy:'B 业务设备接收客户光并转成电，读回与 A 发出时相同的 101101。',detail:'甲先经历客户光接入、OTN 数字组织、线路光传送，再由 B 分波、光接收与数字恢复，最后通过客户光交给业务设备。不同处理改变了信号形式与组织方式，传送成功时原始客户数据保持相同。'}
+];
+
+const steps=[baseSteps[0],baseSteps[1],baseSteps[2],
+ {...baseSteps[3],label:'A 准备组织数字格式',title:'客户数据来到数字处理',oduStage:0,copy:'客户口已把光转成电。数字处理准备按规定格式安放甲；数据区此刻还是空的。'},
+ {...baseSteps[3],label:'A 写入客户数据',title:'把甲写入客户数据区',oduStage:1,copy:'甲的 101101 按原顺序写入客户数据区，同时填入按规则安排业务所需的适配信息。'},
+ {...baseSteps[3],label:'A 增加路径监测',title:'增加监测，形成 ODU',oduStage:2,copy:'增加路径标识与检错信息，形成 ODU（光通道数据单元）；数据与监测各在对应区域。'},
+ baseSteps[4],baseSteps[5],baseSteps[6],baseSteps[7],
+ {...baseSteps[8],label:'B 恢复 ODU',title:'先恢复 ODU，甲仍在数据区',oduStage:3,copy:'B 的数字处理恢复线路格式，再恢复出 ODU。甲还在数据区，尚未送到客户口。'},
+ {...baseSteps[8],label:'B 读回客户数据',title:'按对应规则读回甲',oduStage:4,copy:'B 检查路径监测信息，并按与 A 对应的适配规则读回 101101，交给客户口。'},
+ baseSteps[9],baseSteps[10]];
+let step=0,savedStep=0,inExperiment=false,attempted=false;
+
+const fault={title:'断纤后，另一条路能用吗？',room:'c',place:'control',role:'control',owner:'连接控制',name:'ASON',definition:'自动交换光网络的连接控制',icon:'control',input:data('request','原路线与备用资源','检查 A—D—B 容量',false,'C—B 光纤已中断'),output:data('connection','连接结果','等待尝试重建连接',false,'原连接中断'),copy:'C—B 断纤后，ASON 检查备用线路和容量。',detail:'断纤会中断原连接。备用线路 A—D—B 与容量真实可用时，ASON 可以尝试重新建立连接。恢复连接之后，仍须沿线路传送，并由 B 完成光接收、数字恢复和业务交付。'};
+function signal(side,state){const node=$('signal-'+side),control=['request','connection'].includes(state.kind),multi=['channels','bundle'].includes(state.kind);node.dataset.kind=state.kind;node.classList.toggle('pending',state.kind==='pending');$('form-'+side).textContent=state.title;$('note-'+side).textContent=state.note;$('note-'+side).hidden=multi;$('monitor-'+side).hidden=!state.monitor;$('light-'+side).toggleAttribute('hidden',!['light','bundle','channels'].includes(state.kind));$('electric-'+side).toggleAttribute('hidden',!['data','odu','pending'].includes(state.kind));$('connection-'+side).toggleAttribute('hidden',true);$('shape-'+side).toggleAttribute('hidden',control||multi);$('payload-'+side).hidden=control||multi;$('channels-'+side).hidden=!multi;$('connection-value-'+side).hidden=!control;$('connection-value-'+side).textContent=state.value;}
+
+function render(animate=true){const s=inExperiment?fault:steps[step],ok=inExperiment&&attempted&&$('spare-capacity').checked;$('player').dataset.role=s.role;$('action-title').textContent=s.title;$('step-count').textContent=inExperiment?'断纤实验':(step+1)+' / '+steps.length;$('process-owner').textContent=s.owner;$('process-name').textContent=s.name;$('process-definition').textContent=s.definition;$('process').dataset.icon=s.icon;['port','chip','mux','demux','device','control'].forEach(id=>$('icon-'+id).toggleAttribute('hidden',id!==s.icon));signal('in',s.input);signal('out',s.output);$('main-copy').textContent=s.copy;const isControl=inExperiment||step===1;$('copy-area').classList.toggle('control-copy',isControl);$('business-trace').hidden=!isControl;$('business-trace').textContent='业务甲 101101 · 等待沿连接传送';$('detail-copy').textContent=s.detail;$('step-select').value=String(step);$('step-select').disabled=inExperiment;$('previous-step').disabled=inExperiment||step===0;$('next-step').disabled=inExperiment||step===steps.length-1;$('experiment').textContent=inExperiment?'返回业务':'断纤实验';$('experiment').setAttribute('aria-pressed',String(inExperiment));$('experiment-controls').classList.toggle('visible',inExperiment);$('experiment-controls').setAttribute('aria-hidden',String(!inExperiment));$('spare-capacity').disabled=!inExperiment;$('try-recovery').disabled=!inExperiment;
+['a','b','c'].forEach(r=>$('room-'+r).classList.toggle('current',r===s.room));$('place-a').textContent=s.room==='a'?s.name.replace('OTN ',''):inExperiment?'持续发送':'发送端';$('place-b').textContent=s.room==='b'?s.name.replace('OTN ',''):inExperiment?'等待恢复':'接收端';$('middle-room').textContent=inExperiment&&ok?'D 机房':'C 机房';$('place-c').textContent=inExperiment?(ok?'连接可用':'C—B 断纤'):s.room==='control'?'安排连接':'光继续通过';if(s.room==='control'){$('room-a').classList.add('current');$('room-b').classList.add('current');}
+$('link-ac').className='route-link '+(inExperiment?(ok?'connected':'waiting'):step===0?'':'connected');$('link-cb').className='route-link '+(inExperiment?(ok?'connected':'cut'):step===0?'':'connected');document.querySelectorAll('[data-place]').forEach(n=>n.classList.toggle('active',n.dataset.place===s.place));$('map-control').textContent=inExperiment?'ASON 检查备用路线与容量，尝试重建连接。':'ASON 自动安排连接；业务沿连接传送。';$('map-path').textContent=inExperiment?(ok?'A → D → B · 备用连接已可用':'A → C × B · C—B 光纤中断；备用路线 A → D → B'):'A → C → B · 本例在 C 让光继续通过';
+if(inExperiment&&attempted){const result=ok?'A—D—B 连接可用':'备用容量不足';signal('out',data('connection','连接结果',ok?'沿备用连接重新传送':'原连接仍中断',false,result));$('main-copy').textContent=ok?'备用连接建立；B 仍需接收光、恢复数据并交付。':'备用容量不足，连接恢复失败。';$('business-trace').textContent=ok?'业务甲 101101 · 可继续传送，尚未重新交付':'业务甲 101101 · 暂时收不到新的甲';$('place-b').textContent=ok?'仍需接收处理':'仍未恢复';}
+$('available-out').toggleAttribute('hidden',true);$('step-announcement').textContent=inExperiment?(attempted?(ok?'备用连接可用，B 仍需接收与处理。':'容量不足，连接恢复失败。'):'断纤实验：检查备用线路和容量。'):('第 '+(step+1)+' 步：'+s.title+'。');if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){$('player').classList.remove('just-changed');requestAnimationFrame(()=>$('player').classList.add('just-changed'));}}
+function go(n){inExperiment=false;attempted=false;step=Math.max(0,Math.min(steps.length-1,n));savedStep=step;render();
+ if(matchMedia('(min-width:740px) and (min-height:650px)').matches){
+   const title=$('player').querySelector('.player-heading').getBoundingClientRect();
+   const naturalTop=title.bottom+scrollY;
+   if(step>0||scrollY>naturalTop-56)window.scrollTo({top:naturalTop-56,behavior:'instant'});
+ }
+}
+$('step-select').addEventListener('change',()=>go(Number($('step-select').value)));$('previous-step').addEventListener('click',()=>go(step-1));$('next-step').addEventListener('click',()=>go(step+1));$('restart').addEventListener('click',()=>{$('spare-capacity').checked=true;go(0);window.scrollTo({top:0,behavior:'instant'});});$('experiment').addEventListener('click',()=>{if(inExperiment){go(savedStep);}else{savedStep=step;inExperiment=true;attempted=false;render();}});$('try-recovery').addEventListener('click',()=>{attempted=true;render();});$('spare-capacity').addEventListener('change',()=>{attempted=false;render();});$('player').addEventListener('keydown',e=>{if(inExperiment||e.altKey||e.metaKey||e.ctrlKey||e.target.matches('input,select'))return;if(e.key==='ArrowRight'&&step<steps.length-1){e.preventDefault();go(step+1);}if(e.key==='ArrowLeft'&&step>0){e.preventDefault();go(step-1);}});
+
+const scenePositions={
+ 'a-device':['A 业务设备','内部原始数据','短光纤 · 去 A 客户口','原始数据 → 发送光接口 → 短光纤','left'],
+ 'control':['连接控制','连接需求与线路资源','安排完成的连接','控制功能检查线路与容量，业务仍由传送设备处理','none'],
+ 'a-client':['A 光传送设备 · 客户口','短光纤 · 来自 A 业务设备','同一机框 · 去数字处理','业务设备 → 短光纤 → 客户口 → 数字处理','right'],
+ 'a-digital':['A 光传送设备 · 数字处理','来自客户口','去线路发送处理','客户口 → 数字处理 → 线路口','all'],
+ 'a-line':['A 光传送设备 · 线路口','同一机框 · 来自数字处理','短光纤 · 去合波器','数字处理 → 线路口 → 合波器','left'],
+ 'a-wdm':['A 合波器与机房间光纤','来自三个线路光口','同一根光纤 · 经 C 到 B','三个线路光口 → 合波器 → 机房间光纤 → B 分波器','middle'],
+ 'b-wdm':['B 分波器','来自 A—C—B 光纤','短光纤 · 去 B 线路口','机房间光纤 → 分波器 → 对应线路口','middle'],
+ 'b-line':['B 光传送设备 · 线路口','短光纤 · 来自分波器','同一机框 · 去数字处理','分波器 → 线路口 → 数字处理','right'],
+ 'b-digital':['B 光传送设备 · 数字处理','来自线路口','去客户口','线路口 → 数字处理 → 客户口','all'],
+ 'b-client':['B 光传送设备 · 客户口','同一机框 · 来自数字处理','短光纤 · 去 B 业务设备','数字处理 → 客户口 → 短光纤 → 业务设备','left'],
+ 'b-device':['B 业务设备','短光纤 · 来自 B 客户口','B 内部读回的数据','客户口 → 短光纤 → 接收光接口 → 读回甲','right']
+};
+const picker=$('step-select');picker.replaceChildren(...steps.map((s,i)=>{const n=document.createElement('option');n.value=String(i);n.textContent=(i+1)+'　'+s.label;return n;}));
+function drawRouteWires(){
+ const layout=$('hardware-layout'),svg=$('route-wires'),r=layout.getBoundingClientRect();
+ if(!r.width||getComputedStyle(svg).display==='none')return;
+ svg.setAttribute('viewBox','0 0 '+r.width+' '+r.height);
+ const edge=(id,side)=>{const b=$(id).getBoundingClientRect();return {x:(side==='right'?b.right:side==='left'?b.left:b.left+b.width/2)-r.left,y:(side==='top'?b.top:side==='bottom'?b.bottom:b.top+b.height/2)-r.top};};
+ if(matchMedia('(max-width:600px)').matches){
+   const a=edge('hw-a-wdm','bottom'),b=edge('hw-b-wdm','top'),ct=edge('hw-station-c','top'),cb=edge('hw-station-c','bottom'),dt=edge('hw-station-d','top'),db=edge('hw-station-d','bottom');
+   const v=(id,p,q)=>$(id).setAttribute('d','M '+p.x+' '+p.y+' V '+((p.y+q.y)/2)+' H '+q.x+' V '+q.y);
+   v('wire-ac',a,ct);v('wire-cb',cb,b);v('wire-ad',a,dt);v('wire-db',db,b);$('wire-break').setAttribute('x',String((cb.x+b.x)/2));$('wire-break').setAttribute('y',String((cb.y+b.y)/2+6));return;
+ }
+ const a=edge('hw-a-wdm','right'),b=edge('hw-b-wdm','right'),c=edge('hw-station-c','left'),d=edge('hw-station-d','left');
+ const path=(id,p,q,bend)=>$(id).setAttribute('d','M '+p.x+' '+p.y+' H '+bend+' V '+q.y+' H '+q.x);
+ path('wire-ac',a,c,c.x-8);path('wire-cb',c,b,c.x-8);path('wire-ad',a,d,d.x-16);path('wire-db',d,b,d.x-16);
+ $('wire-break').setAttribute('x',String(c.x-16));$('wire-break').setAttribute('y',String((c.y+b.y)/2+8));
+}
+function drawSceneBoundary(){
+ const scene=$('action-scene'),boundary=$('scene-boundary');if(scene.hidden)return;
+ const s=inExperiment?fault:steps[step],p=scenePositions[s.place]||scenePositions.control,mode=p[4];
+ boundary.hidden=mode==='none';if(boundary.hidden)return;
+ const outer=scene.getBoundingClientRect(),input=$('signal-in').getBoundingClientRect(),output=$('signal-out').getBoundingClientRect(),proc=$('process').getBoundingClientRect();
+ let left=mode==='right'?proc.left:input.left,right=mode==='left'?proc.right:output.right;
+ if(mode==='middle'){left=proc.left;right=proc.right;}
+ const boxes=mode==='left'?[input,proc]:mode==='right'?[proc,output]:mode==='middle'?[proc]:[input,proc,output];
+ const top=Math.min(...boxes.map(b=>b.top))-30,bottom=Math.max(...boxes.map(b=>b.bottom))+14;
+ Object.assign(boundary.style,{left:(left-outer.left-10)+'px',top:(top-outer.top)+'px',width:(right-left+20)+'px',height:(bottom-top)+'px'});
+ $('scene-owner').textContent=mode==='middle'?(s.place==='a-wdm'?'合波器':'分波器'):s.owner;
+}
+const renderBase=render;
+render=function(animate=true){
+ renderBase(animate);const s=inExperiment?fault:steps[step],pos=scenePositions[s.place]||scenePositions.control;
+ const isOdu=!inExperiment&&s.oduStage!==undefined;
+ $('action-scene').hidden=isOdu;$('cx-odu-context').hidden=!isOdu;
+ if(isOdu)renderOduContext(s.oduStage,animate);
+ $('local-owner').textContent=pos[0];$('local-neighbors').textContent=pos[3];
+ $('signal-in').querySelector('.signal-head>span').textContent=pos[1];$('signal-out').querySelector('.signal-head>span').textContent=pos[2];
+ $('detail-visible').textContent=$('detail-copy').textContent;
+ // The ODU figure already explains this transformation; keep the longer rationale once.
+ $('copy-area').hidden=isOdu;
+ const ok=inExperiment&&attempted&&$('spare-capacity').checked;
+ const c=$('hw-station-c'),d=$('hw-station-d');c.classList.toggle('broken',inExperiment);c.classList.toggle('in-use',!inExperiment&&step>=1);d.classList.toggle('in-use',ok);
+ $('hw-c-status').textContent=inExperiment?'C—B 断纤':'让光通过';$('hw-d-status').textContent=ok?'已建立连接':inExperiment&&!$('spare-capacity').checked?'容量不足':'备用路线';
+ $('context-control').textContent=inExperiment?'ASON：检查备用线路与容量':'ASON：安排连接的控制功能';
+ $('context-path').textContent=inExperiment?(ok?'原路 A—C—B 中断 · 现在走 A—D—B':'原路 A—C—B 中断 · 检查 A—D—B'):step===0?'短光纤先接入 A · 机房间路线待建立':'A → C → B · 业务沿这条路线传送';
+ $('wire-ac').setAttribute('class',!inExperiment&&step>=1?'in-use':'');$('wire-cb').setAttribute('class',inExperiment?'cut':step>=1?'in-use':'');
+ ['wire-ad','wire-db'].forEach(id=>$(id).setAttribute('class',ok?'in-use':'backup'));$('wire-break').toggleAttribute('hidden',!inExperiment);
+ $('hardware-layout').querySelectorAll('[data-place]').forEach(n=>{n.classList.toggle('completed',!inExperiment&&steps.slice(0,step).some(old=>old.place===n.dataset.place));});
+ requestAnimationFrame(()=>{drawRouteWires();drawSceneBoundary();});
+};
+new ResizeObserver(()=>{drawRouteWires();drawSceneBoundary();}).observe($('player'));
+
+render(false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "backup": "联通网络学习指南/历史版本/UPC_APC端面Anatomy前-20261016-231547",
+  "tier": "lesson-focus",
+  "scope": "只替换 interfaces 原端面对比图；其余内容保持原样",
+  "geometry": "Anatomy 纵向薄片剖面：外壳定位、陶瓷插芯与光纤；端面微凸与角度为教学示意。侧视插图保留真实 8 度中央切线角。",
+  "boundaries": [
+    "不按比例，不作为产品尺寸图",
+    "蓝绿为接头常见辅助标识，光纤在两图中统一用蓝色",
+    "不模拟损耗或反射功率",
+    "保留原始图文于可展开对照区"
+  ],
+  "sources": [
+    "https://www.corning.com/content/dam/corning/catalog/coc/documents/brochures/EVO-787-EN.pdf",
+    "https://www.advantech.com/en-eu/support/details/faq?id=1-HIIV-786"
+  ]
+}

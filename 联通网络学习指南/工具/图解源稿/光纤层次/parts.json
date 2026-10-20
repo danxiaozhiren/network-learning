@@ -1,0 +1,63 @@
+{
+  "cable": [
+    "cable-jacket",
+    "tube-2",
+    "tube-3",
+    "fiber-2-6",
+    "fiber-2-5",
+    "fiber-2-1",
+    "fiber-2-0",
+    "fiber-2-4",
+    "fiber-2-2",
+    "fiber-2-3",
+    "central-strength",
+    "fiber-3-6",
+    "tube-1",
+    "tube-0",
+    "fiber-3-5",
+    "fiber-3-1",
+    "fiber-3-0",
+    "fiber-3-4",
+    "fiber-3-2",
+    "fiber-3-3",
+    "fiber-1-6",
+    "fiber-1-5",
+    "fiber-1-1",
+    "fiber-1-0",
+    "fiber-1-4",
+    "fiber-1-2",
+    "fiber-1-3",
+    "fiber-0-6",
+    "fiber-0-5",
+    "fiber-0-1",
+    "fiber-0-4",
+    "fiber-0-2",
+    "fiber-0-0",
+    "fiber-0-3"
+  ],
+  "step-0": [
+    "coating",
+    "cladding",
+    "core"
+  ],
+  "step-1": [
+    "coating",
+    "cladding",
+    "core"
+  ],
+  "step-2": [
+    "coating",
+    "cladding",
+    "core"
+  ],
+  "step-3": [
+    "coating",
+    "cladding",
+    "core"
+  ],
+  "step-4": [
+    "coating",
+    "cladding",
+    "core"
+  ]
+}

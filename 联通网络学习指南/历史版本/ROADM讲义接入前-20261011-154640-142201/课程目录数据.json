@@ -1,0 +1,1506 @@
+{
+  "source_url": "https://campus.chinaunicom.cn/training/pc/#/web/ind_ThemeCourses?id=768",
+  "checked_at": "2026-10-10（北京时间）",
+  "categories": [
+    {
+      "name": "网络规划标准化",
+      "slug": "standards",
+      "complete": true,
+      "pages_expected": 1,
+      "pages_checked": [
+        1
+      ],
+      "courses": [
+        {
+          "title": "电信投资项目经济评价培训",
+          "hours": 1.21,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "科技管理",
+      "slug": "management",
+      "complete": true,
+      "pages_expected": 2,
+      "pages_checked": [
+        1,
+        2
+      ],
+      "courses": [
+        {
+          "title": "成果转化之奖项申报",
+          "hours": 2.08,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通研发人员规范化管理",
+          "hours": 0.61,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "专利管理通识",
+          "hours": 0.92,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "研发项目管理办法解读及流程介绍",
+          "hours": 3.1,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "标准通识（上）国际标准",
+          "hours": 1.04,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "标准通识（下）国内标准",
+          "hours": 0.87,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "科技创新激励政策和评奖要求",
+          "hours": 1.17,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "专利基础知识与技能分享",
+          "hours": 1.85,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "集团科技成果管理平台使用",
+          "hours": 0.85,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通科技成果管理制度",
+          "hours": 0.71,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "项目管理方法和工具",
+          "hours": 1.85,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "项目管理思维与最佳实战",
+          "hours": 4.07,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "集团核心技术攻关项目管理",
+          "hours": 0.93,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "网络研究-网络IT",
+      "slug": "network-it",
+      "complete": true,
+      "pages_expected": 3,
+      "pages_checked": [
+        1,
+        2,
+        3
+      ],
+      "courses": [
+        {
+          "title": "网络安全攻防技术",
+          "hours": 1.2,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "大数据基础及IT技术进阶",
+          "hours": 1.46,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "大数据基础及IT技术",
+          "hours": 0.9,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据分析挖掘及工具_中级",
+          "hours": 1.09,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "平台有同名条目，学时不同；保留两条，课程身份待进一步核对。"
+        },
+        {
+          "title": "人工智能主要技术简介",
+          "hours": 1.87,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "移动核心网基础知识_中级",
+          "hours": 0.64,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "移动核心网基础知识_初级",
+          "hours": 0.64,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络管理与数据规范_中级",
+          "hours": 0.81,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据分析挖掘及工具_中级",
+          "hours": 1.15,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "平台有同名条目，学时不同；保留两条，课程身份待进一步核对。"
+        },
+        {
+          "title": "网络数据解析-中级",
+          "hours": 0.6,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络优化基础_中级",
+          "hours": 0.93,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线网络基础_中级",
+          "hours": 0.82,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据分析挖掘及工具_初级",
+          "hours": 0.63,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络数据解析_初级",
+          "hours": 0.67,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络优化基础_初级",
+          "hours": 1.43,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线网络基础_初级",
+          "hours": 0.93,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络融合创新体系进阶",
+          "hours": 4.23,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "网络融合创新体系",
+          "hours": 3.45,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "网络研究-传输网",
+      "slug": "transport",
+      "complete": true,
+      "pages_expected": 3,
+      "pages_checked": [
+        1,
+        2,
+        3
+      ],
+      "courses": [
+        {
+          "title": "空间光通信技术",
+          "hours": 0.9,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/69697",
+          "lesson_url": null,
+          "course_id": "69697"
+        },
+        {
+          "title": "光网络通感一体技术",
+          "hours": 1.05,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/69698",
+          "lesson_url": null,
+          "course_id": "69698"
+        },
+        {
+          "title": "智能运维架构及关键技术",
+          "hours": 1.77,
+          "source_page": 1,
+          "materials_status": "已核对：有 44 页 PDF",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/69710",
+          "lesson_url": null,
+          "course_id": "69710",
+          "material_url": "https://campus.chinaunicom.cn/training/pc/#/web/ind_uc/library/detail?id=2821"
+        },
+        {
+          "title": "光传送网SDN化管控",
+          "hours": 1.1,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60510",
+          "lesson_url": null,
+          "course_id": "60510"
+        },
+        {
+          "title": "传输网络光层测试",
+          "hours": 0.97,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60508",
+          "lesson_url": null,
+          "course_id": "60508"
+        },
+        {
+          "title": "光模块关键技术及应用",
+          "hours": 0.7,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已制作 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60551",
+          "lesson_url": "传输网/光模块关键技术及应用.html",
+          "course_id": "60551"
+        },
+        {
+          "title": "WDM高速光传输技术发展及应用",
+          "hours": 0.64,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已制作 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60506",
+          "lesson_url": "传输网/WDM高速光传输技术发展及应用.html",
+          "course_id": "60506"
+        },
+        {
+          "title": "传输网的传输及业务测试",
+          "hours": 1.15,
+          "source_page": 1,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60505",
+          "lesson_url": null,
+          "course_id": "60505"
+        },
+        {
+          "title": "算力时代的全光底座白皮书解读",
+          "hours": 1.2,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60484",
+          "lesson_url": null,
+          "course_id": "60484"
+        },
+        {
+          "title": "光网络智能化运维",
+          "hours": 1.07,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60483",
+          "lesson_url": null,
+          "course_id": "60483"
+        },
+        {
+          "title": "中国联通政企精品网介绍",
+          "hours": 0.46,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60482",
+          "lesson_url": null,
+          "course_id": "60482"
+        },
+        {
+          "title": "光纤光缆技术发展及应用",
+          "hours": 0.65,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已制作 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60480",
+          "lesson_url": "传输网/光纤光缆技术发展及应用.html",
+          "course_id": "60480"
+        },
+        {
+          "title": "ROADM技术发展及应用",
+          "hours": 0.68,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60479",
+          "lesson_url": null,
+          "course_id": "60479"
+        },
+        {
+          "title": "OTN技术发展及应用",
+          "hours": 0.98,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已制作 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60478",
+          "lesson_url": "传输网/OTN技术发展及应用.html",
+          "course_id": "60478"
+        },
+        {
+          "title": "光模块及光纤光缆通识",
+          "hours": 0.46,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已制作 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60549",
+          "lesson_url": "传输网/光模块及光纤光缆通识.html",
+          "course_id": "60549"
+        },
+        {
+          "title": "光网络基础知识",
+          "hours": 1.08,
+          "source_page": 2,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "已重写 · 待学习反馈",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/60477",
+          "lesson_url": "传输网/光网络基础知识图解.html",
+          "course_id": "60477"
+        },
+        {
+          "title": "中国联通同步网架构及建设方案",
+          "hours": 0.68,
+          "source_page": 3,
+          "materials_status": "已核对：资料栏暂无内容",
+          "lesson_status": "讲义待制作",
+          "url": "https://campus.chinaunicom.cn/training/pc/curriculum.html#/web/course_courseDetails/46602",
+          "lesson_url": null,
+          "course_id": "46602"
+        }
+      ]
+    },
+    {
+      "name": "网络研究-接入网",
+      "slug": "access",
+      "complete": true,
+      "pages_expected": 2,
+      "pages_checked": [
+        1,
+        2
+      ],
+      "courses": [
+        {
+          "title": "BRAS及AAA技术原理",
+          "hours": 0,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "平台显示为 0 学时，未据此判断是否有视频。"
+        },
+        {
+          "title": "ODN设备及组网",
+          "hours": 2.19,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宽带运营支撑系统介绍",
+          "hours": 1.2,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宽带接入网实践与应用",
+          "hours": 3.27,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "接入网络测试规范与仪表使用",
+          "hours": 1.31,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "IPTV网络技术原理",
+          "hours": 1.31,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "智慧家庭业务组网及应用",
+          "hours": 2.06,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宽带接入网基础维护培训",
+          "hours": 1.42,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宽带接入规划培训",
+          "hours": 1.12,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宽带接入网专业技术培训（初）",
+          "hours": 2.36,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "如何编制政企客户解决方案",
+          "hours": 0.65,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "接入网组成及部署",
+          "hours": 1.1,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "网络研究-核心网",
+      "slug": "core",
+      "complete": true,
+      "pages_expected": 3,
+      "pages_checked": [
+        1,
+        2,
+        3
+      ],
+      "courses": [
+        {
+          "title": "3G退网场景下国际漫入语音解决方案",
+          "hours": 0.67,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "边缘计算原理与应用",
+          "hours": 0.81,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G应用技术与行业实践",
+          "hours": 1.05,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "IMS技术原理",
+          "hours": 1.11,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "云计算应用",
+          "hours": 0.77,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G专网场景信令安全解决方案",
+          "hours": 1.13,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "空天地一体化关键技术",
+          "hours": 1.38,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G核心网容灾技术方案",
+          "hours": 1.08,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "SCP基本原理及组网方案",
+          "hours": 0.81,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G SA国际漫游及异网漫游关键技术及解决方案",
+          "hours": 1.03,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G新通信技术及业务场景",
+          "hours": 0.46,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G消息业务演进及关键技术",
+          "hours": 1.19,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G能力开放技术演进及增强",
+          "hours": 0.94,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G核心网组网架构及增强技术",
+          "hours": 1.09,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "云计算技术基础",
+          "hours": 0.74,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "面向垂直行业的网络原子能力应用方案",
+          "hours": 1.01,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "空天地海一体化组网技术",
+          "hours": 1.06,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G核心网切片及演进关键技术",
+          "hours": 1.01,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "EPC系统架构及关键技术",
+          "hours": 0.9,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G SA核心网系统架构及关键技术",
+          "hours": 1.08,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "网络研究-数据网",
+      "slug": "data",
+      "complete": true,
+      "pages_expected": 2,
+      "pages_checked": [
+        1,
+        2
+      ],
+      "courses": [
+        {
+          "title": "宽带核心网络关键技术和创新解决方案",
+          "hours": 1.89,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通宽带城域网路由架构及业务承载",
+          "hours": 1.89,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "广域网关键技术和创新解决方案",
+          "hours": 1.74,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通BNC组网架构",
+          "hours": 0.44,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "一体化运营关键技术和创新解决方案",
+          "hours": 0.9,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "IPv6基本原理与中国联通IPv6规划部署",
+          "hours": 1.17,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通数据网业务承载方案",
+          "hours": 0.93,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通数据网现状",
+          "hours": 0.95,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通数据网络设备高级特性介绍",
+          "hours": 1.23,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据网网络业务原理及实践",
+          "hours": 4.87,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "主流数据网设备型号及功能",
+          "hours": 0.5,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "基本VPN原理及业务可靠性",
+          "hours": 1.95,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据网路由交换原理",
+          "hours": 2.06,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "智能城域网组网架构及业务部署",
+          "hours": 0.88,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "云数据中心网络与SDN",
+          "hours": 1.53,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "网络研究-无线网",
+      "slug": "wireless",
+      "complete": true,
+      "pages_expected": 3,
+      "pages_checked": [
+        1,
+        2,
+        3
+      ],
+      "courses": [
+        {
+          "title": "5G-Advanced技术演进与应用",
+          "hours": 2.62,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线网云化开放化技术演进与应用",
+          "hours": 1.47,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G场景化组网方案",
+          "hours": 1.75,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线网智能化应用解决方案",
+          "hours": 1.45,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "6G无线新技术培训(中级课程)",
+          "hours": 2.76,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "6G无线新技术培训(初级课程）",
+          "hours": 2.54,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "公众移动通信频谱现状及发展趋势",
+          "hours": 1.36,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "频率基础知识",
+          "hours": 1.01,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "频率与干扰解决实例培训",
+          "hours": 0.92,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线ICT应用实例",
+          "hours": 0.96,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线组网方案（中级）",
+          "hours": 1.23,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线基站硬件设备架构与原理",
+          "hours": 0.89,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线通信关键技术",
+          "hours": 1.29,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "无线网和终端栏目均列出此名称，按栏目保留。"
+        },
+        {
+          "title": "无线通信网络中的人工智能",
+          "hours": 1.04,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线组网方案（初级）",
+          "hours": 1.18,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线设备基础知识",
+          "hours": 1.01,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线通信技术原理",
+          "hours": 1.2,
+          "source_page": 3,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "应用技术研究-终端",
+      "slug": "terminal",
+      "complete": true,
+      "pages_expected": 2,
+      "pages_checked": [
+        1,
+        2
+      ],
+      "courses": [
+        {
+          "title": "AI应用的计算基础:深度学习、大模型及终端设备",
+          "hours": 1.37,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "通信模组基础知识",
+          "hours": 0.66,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G网络架构及关键技术概述",
+          "hours": 0.72,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G技术特点及应用场景",
+          "hours": 1.65,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "SIM卡技术体系及技术能力介绍-基础功能",
+          "hours": 0.94,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "电信卡行业技术规范介绍",
+          "hours": 2.38,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "轻量化5G（RedCap）技术及业务介绍",
+          "hours": 1,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "整体市场及联通现网终端分析",
+          "hours": 0.55,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "“端边一体”理念及其发展机遇",
+          "hours": 1.01,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "信息通信终端（泛终端）基础知识",
+          "hours": 1.36,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "无线通信关键技术",
+          "hours": 1.29,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "无线网和终端栏目均列出此名称，按栏目保留。"
+        },
+        {
+          "title": "eSIM一号双终端业务",
+          "hours": 0.44,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "5G与泛在低空应用",
+          "hours": 1.28,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "智库研究",
+      "slug": "research",
+      "complete": true,
+      "pages_expected": 2,
+      "pages_checked": [
+        1,
+        2
+      ],
+      "courses": [
+        {
+          "title": "指标管理及应用：经验分享：基于PEST模型进行外部宏观环境分析",
+          "hours": 1.3,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "用AI做高质量数据分析",
+          "hours": 4.45,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数据思维基础知识",
+          "hours": 4.98,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "中国联通算网数智业务介绍",
+          "hours": 2.71,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "低空经济产业市场洞察",
+          "hours": 1.11,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "构建收益管理体系：优化渠道策略，驱动收益增长",
+          "hours": 3.14,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "数字经济基础知识及未来趋势",
+          "hours": 1.18,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "非财务人员如何读懂企业财务报表",
+          "hours": 0.67,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "宏观政策研究分析方法论",
+          "hours": 1.13,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "大数据挖掘之SPSS工具——寻找运营商业务问题的原因所在",
+          "hours": 1.18,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "新型智慧城市顶层设计",
+          "hours": 1.09,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "如何打造以人为本的数字化营销体系",
+          "hours": 1.5,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "市场洞察方法论及案例",
+          "hours": 1.11,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "《好产品是如何诞生的？——产品设计运营的理论及应用》",
+          "hours": 0.98,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "怎样撰写调研报告",
+          "hours": 1.43,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "战略管理及战略分析工具的应用",
+          "hours": 3.52,
+          "source_page": 2,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    },
+    {
+      "name": "科创通识",
+      "slug": "innovation",
+      "complete": true,
+      "pages_expected": 1,
+      "pages_checked": [
+        1
+      ],
+      "courses": [
+        {
+          "title": "科创人员的技术文稿撰写方法",
+          "hours": 3.34,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "科技成果转化常识",
+          "hours": 0.74,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "科技成果管理及转化办法解读",
+          "hours": 0,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null,
+          "note": "平台显示为 0 学时，未据此判断是否有视频。"
+        },
+        {
+          "title": "科创人员必读的科创政策",
+          "hours": 1.49,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "研发项目管理通识",
+          "hours": 1.16,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "专利基础、培育路径和转化运用",
+          "hours": 1.01,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        },
+        {
+          "title": "专利、软著申请流程及要求",
+          "hours": 0.62,
+          "source_page": 1,
+          "materials_status": "未核对",
+          "lesson_status": "讲义待制作",
+          "url": null,
+          "lesson_url": null
+        }
+      ]
+    }
+  ],
+  "note": "已核对本主题专区全部 11 个课程分类，共 24 页、149 条课程记录。按栏目计数，保留同名及跨栏目条目；不代表 149 门互不重复的课程。传输网 17 条已核对课程资料栏，其余 132 条尚未核对课件。"
+}

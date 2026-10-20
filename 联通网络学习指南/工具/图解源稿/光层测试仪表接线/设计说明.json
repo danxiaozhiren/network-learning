@@ -1,0 +1,47 @@
+{
+  "tier": "Figure",
+  "backup": "联通网络学习指南/历史版本/光层测试Anatomy前-20261016-233137",
+  "scope": [
+    "loss-demo instrument wiring",
+    "otdr-demo instrument, launch and tail wiring"
+  ],
+  "preserve": [
+    "original prose and chapters",
+    "original numerical model and controls",
+    "original OTDR trace and event explanations",
+    "original instrument photo"
+  ],
+  "concept": "Physical instrument ports map to the reference cord, installed link, launch fibre and tail fibre.",
+  "partsPlan": [
+    "instrument base and front face",
+    "screen bezel and display",
+    "keys and corner screws",
+    "optical adapter, plug and boot",
+    "launch and tail fibre storage cases"
+  ],
+  "sources": [
+    "https://www.flukenetworks.com/edocs/wp-demystifying-fiber-test-methods-back-basics",
+    "https://www.flukenetworks.com/knowledge-base/optifiber-pro/compensate-launch-and-tail-cords"
+  ],
+  "build": "node 联通网络学习指南/工具/图解源稿/光层测试仪表接线/build.mjs --audit",
+  "mobile": "OTDR 接线总览纵向排列；测量步骤聚焦当前仪表，可切换完整接线。",
+  "validation": {
+    "geometryAssemblies": 5,
+    "geometryParts": 67,
+    "sourceAndShareBrowserStates": 264,
+    "viewports": [
+      "1280x900",
+      "820x650",
+      "390x844",
+      "360x640"
+    ],
+    "originalMeasurementScript": "byte-identical",
+    "originalTraceAndControls": "byte-identical",
+    "shareChangedPages": [
+      "optical-testing"
+    ],
+    "shareSourceHashes": 21,
+    "buildIdempotent": true,
+    "evidence": "/Users/abi/.codex/visualizations/2026/10/16/01a1451f-59a3-7c61-b21e-ca34ac8d6f04/光层测试仪表接线"
+  }
+}

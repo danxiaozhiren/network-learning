@@ -1,0 +1,21 @@
+{
+  "asset": "业务测试仪外形示意.png",
+  "purpose": "《传输网的传输及业务测试》中的便携式业务测试仪外形识别，不用于表示实际接线或某一型号的操作界面。",
+  "generation": {
+    "tool": "内置 image_gen",
+    "mode": "new image",
+    "prompt": "Use case: scientific-educational\nAsset type: Chinese networking course instrument recognition illustration, new original bitmap.\nPrimary request: A single unbranded portable Ethernet / transport service tester, realistic educational product rendering, 3/4 front view on a plain white studio background. A compact landscape handheld field instrument with dark gray matte body, muted blue-gray protective rubber corners, clear large screen, physical power key and several simple navigation buttons. Show the top optical interface clearly: one pluggable optical transceiver with a pair of realistic rectangular LC optical receptacles, labeled exactly \"Tx\" and \"Rx\" directly at the respective sockets. No cables plugged in, no other instruments.\nScreen: bright restrained gray-white display; just a short header \"TEST FRAMES\", followed by two large easily readable rows \"Tx 10000\" and \"Rx 10000\". No small interface details or charts. These are illustrative frame counts, not a live test. Do not add other screen text.\nComposition: instrument centered, full object entirely visible, fills approximately 80 percent of image width, horizontal 3:2 image. Front and top ports visible simultaneously with modest perspective, natural soft contact shadow.\nStyle: precise semi-realistic classroom instrument illustration, quiet low-saturation palette, visible physical materials, no decorative neon glow, no dramatic background. Clear tangible optical ports and controls are the teaching focus.\nConstraints: no brand name, no fictitious model name, no logos, no watermark, no arrows or captions outside the instrument, no external wiring. Label spelling must be exact.",
+    "source": "/Users/abi/.codex/generated_images/01a13302-bd38-75a3-99a2-1ab4f11b0096/exec-73c291be-5ea6-4964-8c75-e95db1159f20.png"
+  },
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "inspection": [
+    "白色背景、低饱和灰色机身和蓝灰护角，与上一课仪器图一致。",
+    "无品牌、无型号、无水印，只有一台仪器，没有外接线。",
+    "顶部双光接口标有 Tx 与 Rx，屏幕 TEST FRAMES / Tx 10000 / Rx 10000 字样清晰。",
+    "屏幕计数和端口布局为外形教学示意，不代表正在运行的测试或任何具体设备的准确结构。",
+    "实际接线、发送接收关系由讲义的 HTML 交互图另行解释。"
+  ]
+}

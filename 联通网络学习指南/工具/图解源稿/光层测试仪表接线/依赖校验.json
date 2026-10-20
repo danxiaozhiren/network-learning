@@ -1,0 +1,30 @@
+[
+  {
+    "path": "../光模块收发功能/vendor/anatomy/LICENSE",
+    "sha256": "f387fa1e4252b610ae913ba2ff6a861022fcef4be5d69a59a84cae32de036a4c"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/SKILL.md",
+    "sha256": "c292a14371380ee4eaa00d062b130af243139f8d5b7ab5ecacd4435932ed0185"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/source-manifest.json",
+    "sha256": "7ce2e7b17255e89437ddcb391caaa6950a5e114b9c407ab8177ed12cbc441553"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/kit/iso-kit.mjs",
+    "sha256": "cb6897d3cab6b937337c412ff84f055bbef899dc3b8f41296cc0342715c2bb32"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/kit/lathe.mjs",
+    "sha256": "0fb8600ab69e5646484a2165dc23de857be4aa1126f813f84d68b8ac15063fbe"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/kit/audit.mjs",
+    "sha256": "8a48a10497229ed901e935644bf686b2dcc23db63731a85e5071624454bccc25"
+  },
+  {
+    "path": "../光模块收发功能/vendor/anatomy/kit/tube.mjs",
+    "sha256": "e615d48a73294854ace68275f8a7cda86b1e80af1e48539093f2de44246f5f98"
+  }
+]

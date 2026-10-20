@@ -1,0 +1,318 @@
+{
+  "migrated_at": "2026-10-11T00:01:37",
+  "source_root": "/Users/abi/Documents/project/personal/网络知识学习",
+  "project_root": "/Users/abi/Documents/project/personal/网络知识学习/联通网络学习指南",
+  "moved_entries": [
+    "传输网",
+    "工具",
+    "历史版本",
+    "网络学习总目录.html",
+    "课程目录数据.json"
+  ],
+  "files": [
+    {
+      "path": "传输网/assets/光传送整机与板卡-外形示意.png",
+      "bytes": 2106123,
+      "sha256": "d294cccd45fa1ad5d5cc5d46b0217daaae1faee1238002205372662cd6fac72a"
+    },
+    {
+      "path": "传输网/assets/光模块与跳线-外形示意.png",
+      "bytes": 1887316,
+      "sha256": "aadd415799f541c249cf9efbb8124c539c8fbaa5e996d9122518e45026847156"
+    },
+    {
+      "path": "传输网/assets/合分波器与光放大器-外形示意-v2.png",
+      "bytes": 1596904,
+      "sha256": "7862d123a9eeba226368e4ccc2f30fa9e686ee97be1abe38250f3689915d5e5f"
+    },
+    {
+      "path": "传输网/assets/合分波器与光放大器-外形示意.png",
+      "bytes": 1679517,
+      "sha256": "4969618ade9927eec7ab86439e162067667213e117ffb0de18aeeab6f2891ca4"
+    },
+    {
+      "path": "传输网/assets/设备插图制作记录.json",
+      "bytes": 3087,
+      "sha256": "e9b67225fd4bcec2163e218c48b5b05a6e86a30571c5e5cc3fb2899d654ebb7f"
+    },
+    {
+      "path": "传输网/assets/设备插图最终记录.json",
+      "bytes": 4183,
+      "sha256": "81cfe0a8952232b61e59aac97227a08437c547cfa683007888cfcc22604094d7"
+    },
+    {
+      "path": "传输网/传输网学习目录.html",
+      "bytes": 394457,
+      "sha256": "f7437f1eb53bd5fdeab52313efd9bfce7644fbdbb7e1b9a1beabdf3e7cd3d625"
+    },
+    {
+      "path": "传输网/光网络基础知识图解.html",
+      "bytes": 7507422,
+      "sha256": "17172b66f44dc30afe595add0e8c784198aaa9c952ba609eeb98d1f3418f5037"
+    },
+    {
+      "path": "传输网/光网络基础知识通俗讲义.md",
+      "bytes": 27015,
+      "sha256": "3c70342c1d9a3c6ce5f400bb453f95e5247c3b9f1fbd88f59821a30c61892d7c"
+    },
+    {
+      "path": "传输网/历史版本/光网络基础知识图解-补充整机实物前-20261010.html",
+      "bytes": 2563121,
+      "sha256": "b3f068f233d268066d29abcfd4425e4c899dd319be28b17bb004cd540eade8cb"
+    },
+    {
+      "path": "传输网/历史版本/光网络基础知识图解-重写前-20261010.html",
+      "bytes": 71272,
+      "sha256": "91d91c44ac8b5370dfdd67d9978b76aa03df2bfac39fd20ce3eba5689ffa6420"
+    },
+    {
+      "path": "传输网/历史版本/讲义制作要求-双入口前-20261010.html",
+      "bytes": 12747,
+      "sha256": "9cd3a130033045068444a9eb574e2880e611722e144ebda468bd0e452358e45c"
+    },
+    {
+      "path": "传输网/讲义制作要求.html",
+      "bytes": 14237,
+      "sha256": "058921c3515d0edf0d7ebb65ceda8bfdc7a38e59a03b18b51add632826f6785b"
+    },
+    {
+      "path": "工具/学习路线配置.json",
+      "bytes": 6522,
+      "sha256": "5f748468730ab5933e02a74cd01688891fba8a0bb9f94a436967c7651f5fe193"
+    },
+    {
+      "path": "工具/生成总目录.py",
+      "bytes": 21002,
+      "sha256": "606b99c8ff6eae33094cb72fe71c905b9d0ff0b4de8405e7900de5b10fd22066"
+    },
+    {
+      "path": "工具/目录交互.js",
+      "bytes": 12954,
+      "sha256": "010daf9f2ea34d456cae71392156a4e9cd770f97e429f2c7b2cb73c7482dd663"
+    },
+    {
+      "path": "工具/目录搜索.js",
+      "bytes": 10333,
+      "sha256": "3526758fc9f4fce5b20f09c68df250467abf4e96c9a2fcbbc630ae2ea6a9b8a7"
+    },
+    {
+      "path": "工具/目录样式.css",
+      "bytes": 15579,
+      "sha256": "66b242c398e0e722449262c29546958fe5ac5743a40f69c5436dc688091a42d7"
+    },
+    {
+      "path": "工具/知识主题配置.json",
+      "bytes": 39921,
+      "sha256": "80ab248334f64619ebbedf343793c8fab95aafc3bfafae62e63527b81469d3cf"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/传输网/传输网学习目录.html",
+      "bytes": 212118,
+      "sha256": "9948fb9b6f35f8b4e19feff6511f500e94b5caae4fa54459d664ed0c6fa2eb43"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/工具/学习路线配置.json",
+      "bytes": 6522,
+      "sha256": "5f748468730ab5933e02a74cd01688891fba8a0bb9f94a436967c7651f5fe193"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/工具/生成总目录.py",
+      "bytes": 14634,
+      "sha256": "a40622fd47401804eda71b98d92aa0b5f2b1ff45cf7b628b7cf26fbd3407d7ac"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/工具/目录交互.js",
+      "bytes": 7163,
+      "sha256": "63f111f7ecf62772dd7deb825e666a003777b0979eed72357a2426de4f820704"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/工具/目录样式.css",
+      "bytes": 11608,
+      "sha256": "d45c5bee495e6aba8d6fbec39343591c460dadaf9de11c1dbd477dec374e50ad"
+    },
+    {
+      "path": "历史版本/双入口目录前-20261010/网络学习总目录.html",
+      "bytes": 212113,
+      "sha256": "23b660be2f382b42080327d1d6862a9f4dc687c8c000124c5bf960673a8aba39"
+    },
+    {
+      "path": "历史版本/目录交互增强前-20261010-235039/传输网/传输网学习目录.html",
+      "bytes": 314533,
+      "sha256": "88a595f165875cfd34be76361f47fecc6f226d4e3ef7294374d4456d2d8044a9"
+    },
+    {
+      "path": "历史版本/目录交互增强前-20261010-235039/工具/生成总目录.py",
+      "bytes": 19642,
+      "sha256": "4d9c8f0d938f0341b1ef2a1814bbbb0c715c0bc671b3c38df6ad0cf6d5394793"
+    },
+    {
+      "path": "历史版本/目录交互增强前-20261010-235039/工具/目录交互.js",
+      "bytes": 9614,
+      "sha256": "553e4e4cfd27807545d0c3a8e93549b92325b86bd6587b429ced9f56f11e49f0"
+    },
+    {
+      "path": "历史版本/目录交互增强前-20261010-235039/工具/目录样式.css",
+      "bytes": 13921,
+      "sha256": "16412d78f71e04fffb8ac0a26484d55dac16dfcdc45c371eec5a8fc2fa8abc29"
+    },
+    {
+      "path": "历史版本/目录交互增强前-20261010-235039/网络学习总目录.html",
+      "bytes": 314489,
+      "sha256": "48494612842fef3956d30ead6ba94961736acdcb5241351dd18a24da8a044c39"
+    },
+    {
+      "path": "历史版本/目录优化前-20261010/传输网/传输网学习目录.html",
+      "bytes": 23050,
+      "sha256": "b9443f0b95f0aff177c54c0ab8615160d5275502c46b6964be1566b6dcd6b3a0"
+    },
+    {
+      "path": "历史版本/目录优化前-20261010/工具/生成总目录.py",
+      "bytes": 23477,
+      "sha256": "fe351b342a9bd113b241fd5f2ffbfbcac5cdfdda574a2695839faccb537438a5"
+    },
+    {
+      "path": "历史版本/目录优化前-20261010/网络学习总目录.html",
+      "bytes": 116776,
+      "sha256": "394517a0fcce283304d03d09518c3e9f82cbebff5be7235ba618acb89b0fd2ce"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/传输网/传输网学习目录.html",
+      "bytes": 333877,
+      "sha256": "c12b2def229b87d5c05389e133945452d53bf5c7e5328402c12e80899bb16d9a"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/工具/生成总目录.py",
+      "bytes": 22407,
+      "sha256": "1a3b0eaabd2f67e041ae100a2ec0639357b5f52498a2c4a2ce3734479d771476"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/工具/目录交互.js",
+      "bytes": 10039,
+      "sha256": "bc9a2796fa9e4b49d6f310ef8265e6bf5d0a564026aa572c981999cf74deba94"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/工具/目录样式.css",
+      "bytes": 14052,
+      "sha256": "5e441158ae10611611b83a3f7679b67aea18aab5ffb25a7b9fb048567e150cb1"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/工具/知识主题配置.json",
+      "bytes": 40433,
+      "sha256": "6ddf1593cfcd7a12742258d0ba958c657111f270a9fbc5b527271156fecf4265"
+    },
+    {
+      "path": "历史版本/目录文案精简前-20261010-233809/网络学习总目录.html",
+      "bytes": 333833,
+      "sha256": "3d7b938bd4df58d22a771079dea0ee59613f20a8f3cee449a229bb5ca9ee3b23"
+    },
+    {
+      "path": "网络学习总目录.html",
+      "bytes": 394413,
+      "sha256": "123855426761ba90dfca01702e48419e73bf7936cfc97023654443858a6a6b91"
+    },
+    {
+      "path": "课程目录数据.json",
+      "bytes": 46393,
+      "sha256": "c6bae51b7f5f708aa329a0c8b5af462a5798b9ece729421eba80d93370256c09"
+    }
+  ],
+  "preserved_old_files": {
+    "0704/课堂问答随笔": {
+      "size": 174680,
+      "mtime_ns": 1783173639148728191,
+      "inode": 20902582,
+      "sha256": "cb004db09ada1de1ce7c4085d502be6fdc7e0451f4754e60b67a94d4a3ac0bd5"
+    },
+    "0704/0704二层网络课堂笔记.md": {
+      "size": 18269,
+      "mtime_ns": 1783175556484259637,
+      "inode": 20922291,
+      "sha256": "45bab4c53262a500e4ec96da63a03e5b73a25b017525bdf6331d444fa5cecc87"
+    },
+    "0704/第 1 课：从集线器到交换机——构建二层网络.md": {
+      "size": 12052,
+      "mtime_ns": 1782957255844952982,
+      "inode": 20902144,
+      "sha256": "f5107b7f8569bd349cd536935d13b9093db815021858b619f97d39e5847a873a"
+    },
+    "0704/二层网络知识.rtf": {
+      "size": 140402,
+      "mtime_ns": 1783135064701182008,
+      "inode": 20900377,
+      "sha256": "929e7b290d54cb6920dda422bb0d500c624ff4b2b46ede4def938f25f203cc2c"
+    },
+    "0711/0711课堂笔记：VLAN、Trunk与跨网段转发.md": {
+      "size": 10438,
+      "mtime_ns": 1783778392628054626,
+      "inode": 28206134,
+      "sha256": "82c14f13d2f661c5d69ea4ead3d0fd8800a92696ba9d1ded502ffc71f1cbe758"
+    },
+    "0711/课堂补充：ARP、默认网关与跨网段转发.md": {
+      "size": 11439,
+      "mtime_ns": 1783743557442754939,
+      "inode": 27533687,
+      "sha256": "2e8818ec7b3bed8978fd07f69f2cdc1f9ff1fb8e6b73470e329137d6f4410e4e"
+    },
+    "0711/0711上课录音.rtf": {
+      "size": 197393,
+      "mtime_ns": 1783742797394561000,
+      "inode": 27522200,
+      "sha256": "ef28ca1931ad4212a772aaa02f542eefef639ccfe66eabccf47681e1cc92e398"
+    },
+    "0711/第 2 A 课：VLAN 与 Trunk——从隔离到跨交换机互通.md": {
+      "size": 8587,
+      "mtime_ns": 1783743406434265428,
+      "inode": 27532151,
+      "sha256": "d6ddaf7d0b0ee9943d24683b680f97549c302511882bca0e34f260f3954698f1"
+    },
+    "0725/第 3 A 课：从二层到三层——VLAN 间路由与静态路由基础.md": {
+      "size": 14866,
+      "mtime_ns": 1784113556629733395,
+      "inode": 54281625,
+      "sha256": "e84ef58035fa8e2830a8b5ce95d88c18493d1ed9749fbd807429f4746e9acb2a"
+    },
+    "0725/0725课堂笔记：VLANIF、路由表与静态路由.md": {
+      "size": 9616,
+      "mtime_ns": 1784949934513691982,
+      "inode": 54328659,
+      "sha256": "c69d6ae1080d19bd5abef37b70e1a0b4354a13e3838d33efc22998c890554439"
+    },
+    "0808/0808课堂笔记：RIP与动态路由.md": {
+      "size": 5466,
+      "mtime_ns": 1786160988133382761,
+      "inode": 65092299,
+      "sha256": "79897c2a356f8290771bf18cfd8e8c0a3a712306955b4b451348bb3ebb32fa0f"
+    },
+    "0808/第 6 A 课：RIP——动态路由的第一课.md": {
+      "size": 17037,
+      "mtime_ns": 1785835222901053979,
+      "inode": 65078877,
+      "sha256": "493b0aed8af78da7aff8c138d98d433c6e57b0891c66dd5775a8c59fe8da6fc2"
+    },
+    "机房设备/IMG_9677.MOV": {
+      "size": 1161653478,
+      "mtime_ns": 1784018552062510665,
+      "inode": 32582687
+    },
+    "机房设备/IMG_9678.MOV": {
+      "size": 1645380905,
+      "mtime_ns": 1784018799455335363,
+      "inode": 32584674
+    },
+    "IP地址计算——从二进制到子网划分.md": {
+      "size": 12964,
+      "mtime_ns": 1782544897616191030,
+      "inode": 20900376,
+      "sha256": "c1d806b6ff29105df2008883421f0a4e0943bac0628bd3547c13abac412e2327"
+    },
+    "子网掩码与VLSM课堂笔记.md": {
+      "size": 12363,
+      "mtime_ns": 1782618040396308899,
+      "inode": 20900374,
+      "sha256": "7e118b72ef9a3b6f1bc6fee3861c10081711dbdd5bed99983da05e4abb000f79"
+    }
+  },
+  "parent_readme_backup": "原目录README.md",
+  "parent_readme_before_sha256": "8d76d39676310ac9932f38662a018681e705862ffb87f2e9bd2f4951a5d1b931",
+  "parent_readme_after_sha256": "5b4b4d0b4495f90700f160c1f6638c8a60c752e06b3dfb97c2708b5b87b84af7"
+}

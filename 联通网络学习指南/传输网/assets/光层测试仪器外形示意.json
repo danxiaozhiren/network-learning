@@ -1,0 +1,33 @@
+{
+  "title": "光层测试仪器外形示意",
+  "purpose": "《传输网络光层测试》讲义中的实物外形辨认",
+  "mode": "built-in image_gen",
+  "tool": "image_gen.imagegen",
+  "use_case": "scientific-educational",
+  "iterations": 1,
+  "prompt": "Use case: scientific-educational\nAsset type: a wide teaching illustration for an HTML lesson about optical-network testing equipment.\nCreate a realistic studio product illustration of three GENERIC, UNBRANDED fiber-optic test instruments standing side by side, facing camera at a very slight elevated three-quarter angle so their top optical adapters are visible. Pure white background, restrained slate gray / desaturated blue / muted teal instrument casings, realistic molded plastic and rubber bumpers, physical buttons, metal optical adapter fittings, soft short shadows. Carefully separated items, all fully visible.\nLeft: a handheld stabilized optical light source, small portrait-format casing. Exactly one metal optical OUTPUT adapter on top. Simple LCD with only \"1310 / 1550\" and \"nm\", plus small wavelength-selection and power buttons.\nMiddle: a handheld optical power meter, similar scale to the left instrument but clearly a separate device. Exactly one metal optical INPUT adapter on top. Main LCD value exactly \"-6.0 dBm\", with \"1550 nm\" below. A few physical buttons.\nRight: a wider, larger portable OTDR, landscape screen and physical buttons on its right bezel. One visible top optical adapter. The LCD shows a clean blue OTDR trace: optical backscatter slopes gradually downward from left to right with ONE narrow upward reflection spike, then a continuing declining line and final steep drop. The horizontal axis is distance, indicated only by \"km\". The trace must look like a measured curve, not an oscilloscope sine wave.\nPlace a small dark gray numeral \"1\" directly below the left instrument, \"2\" below the middle instrument, \"3\" below the right instrument. These are the only labels outside the screens.\nThis is a generic physical appearance illustration, not a depiction of a particular manufacturer or model. No brand names, logos, model numbers, Chinese text, annotations, arrows, optical path lines, fiber patch cords, connected cables, visible lasers, neon colors, decorative particles, dramatic lighting, or glowing effects. Do not connect the three instruments together. No title. Landscape composition approximately 2:1, clear enough to identify the top ports, screens and buttons.",
+  "source_image": "/Users/abi/.codex/generated_images/01a132df-7972-7512-8b50-172dae4bf88b/exec-feceaeb6-d359-42b4-aaff-6f531130e963.png",
+  "output_image": "光层测试仪器外形示意.png",
+  "review": {
+    "viewed": true,
+    "description": "白底横向图，左侧稳定光源、中间光功率计、右侧便携 OTDR。每台顶部都有一个金属光口；外壳、按键和 LCD 清晰；下方编号为 1、2、3。",
+    "confirmed": [
+      "无品牌及型号",
+      "无中文注释",
+      "三台仪器相互独立，无互接跳线",
+      "无可见激光",
+      "光源屏幕为 1310 / 1550 nm",
+      "光功率计屏幕为 -6.0 dBm、1550 nm",
+      "OTDR 为随距离下降、带反射峰和末端跌落的蓝色曲线",
+      "低饱和灰蓝青绿配色与柔和阴影"
+    ],
+    "usage_notes": [
+      "这是 AI 生成的通用仪器外形示意，不对应真实型号。",
+      "屏幕读数与 OTDR 曲线用于识别仪器外观，不是实际线路测量结果；不要用图上斜率推算光纤衰减。",
+      "编号 1、2、3 的仪器名称及作用由 HTML 正文说明。"
+    ]
+  },
+  "created_at": "2026-10-13T09:29:11+08:00",
+  "sha256": "91a497797fb5fd7ae55209cc5414609eaca4793e5b7abae6976144b7bd35a6c4",
+  "bytes": 1661414
+}

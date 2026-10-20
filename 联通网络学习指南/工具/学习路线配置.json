@@ -1,0 +1,194 @@
+{
+  "groups": [
+    {
+      "title": "网络基础",
+      "description": "先看信息怎样传送，再学接入与转发。",
+      "modules": [
+        "transport",
+        "access",
+        "data"
+      ]
+    },
+    {
+      "title": "移动通信",
+      "description": "认识无线接入、核心网和终端。",
+      "modules": [
+        "wireless",
+        "core",
+        "terminal"
+      ]
+    },
+    {
+      "title": "技术与应用拓展",
+      "description": "按工作需要选择学习。",
+      "modules": [
+        "network-it",
+        "standards",
+        "management",
+        "innovation",
+        "research"
+      ]
+    }
+  ],
+  "modules": {
+    "transport": {
+      "title": "传输网",
+      "description": "理解光网络怎样传送信息，以及怎样测试和运维。"
+    },
+    "access": {
+      "title": "接入网",
+      "description": "认识宽带接入网的组成、组网与维护。"
+    },
+    "data": {
+      "title": "数据网",
+      "description": "理解路由交换和数据业务怎样在网络中传送。"
+    },
+    "wireless": {
+      "title": "无线网",
+      "description": "认识无线设备、频率和无线组网原理。"
+    },
+    "core": {
+      "title": "核心网",
+      "description": "认识核心网架构及语音、漫游等业务原理。"
+    },
+    "terminal": {
+      "title": "终端",
+      "description": "认识通信终端、通信模组和 SIM 卡的作用。"
+    },
+    "network-it": {
+      "title": "网络IT",
+      "description": "了解网络数据分析、网络管理和安全技术。"
+    },
+    "standards": {
+      "title": "网络规划标准化",
+      "description": "了解电信投资项目怎样做经济评价。"
+    },
+    "management": {
+      "title": "科技管理",
+      "description": "了解研发项目、专利、标准及科技成果管理。"
+    },
+    "innovation": {
+      "title": "科创通识",
+      "description": "学习技术文稿写作、研发管理和成果转化。"
+    },
+    "research": {
+      "title": "智库研究",
+      "description": "学习数据分析、市场洞察和研究报告的方法。"
+    }
+  },
+  "transport_stages": [
+    {
+      "id": "foundation",
+      "title": "认识光网络与实际部件",
+      "courses": [
+        {
+          "course_id": 60477,
+          "question": "信息怎样从 A 机房到 B？沿途有哪些设备，分别做什么？",
+          "topics": [
+            "一段信息怎样传过去：用 1010 的例子认识比特、光信号、发送和接收。",
+            "认清沿途实物：光模块、跳线、光纤与光缆；把图片对应到链路的位置。",
+            "距离变长，为什么可能读错：从光变弱、信号变形和干扰引出传输质量。",
+            "更多信息怎样一起传：先解释波长，再理解 WDM 如何让不同波长共用光纤。",
+            "业务怎样组织和检查：用具体数据的变化认识 OTN 的基本作用。",
+            "多条路线怎样建立连接：在已经铺好的网络上认识 ASON，并回看完整的 A → B 过程。",
+            "用自己的话讲一遍：配少量判断和应用题，把不懂的地方补回对应小节。"
+          ]
+        },
+        {
+          "course_id": 60549,
+          "question": "光模块、光纤、光缆和跳线分别是什么？接口能插上，为什么还要核对规格？"
+        },
+        {
+          "course_id": 60480,
+          "question": "光纤的结构与传输能力有什么关系？不同使用环境怎样影响光缆选择？"
+        },
+        {
+          "course_id": 60551,
+          "question": "光模块怎样发送和接收信息？怎样读懂速率、距离、波长等参数？"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "理解容量、业务组织与光路",
+      "courses": [
+        {
+          "course_id": 60506,
+          "question": "多路光怎样共用一根光纤？增加波长和提高单路速率有什么区别？"
+        },
+        {
+          "course_id": 60478,
+          "question": "不同业务怎样组织起来传送？途中怎样监测、在节点怎样转接？"
+        },
+        {
+          "course_id": 60479,
+          "question": "怎样把某个波长分到本站，或转向另一条线路？远程调整改变了什么？"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "判断链路和业务是否正常",
+      "courses": [
+        {
+          "course_id": 60508,
+          "question": "收到的光够不够强、质量好不好，分别怎样判断？沿途损耗在哪里发生？"
+        },
+        {
+          "course_id": 60505,
+          "question": "链路有光为什么还不一定能正常传数据？怎样检查传输差错和业务表现？"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "理解管控与运维",
+      "courses": [
+        {
+          "course_id": 60510,
+          "question": "怎样统一安排设备和连接？软件定义网络（SDN）与自动连接控制各负责什么？"
+        },
+        {
+          "course_id": 69710,
+          "question": "运维数据从哪里来？怎样从告警和性能变化找到需要处理的问题？"
+        },
+        {
+          "course_id": 60483,
+          "question": "光网络可以怎样辅助发现、定位和处理故障？自动处理需要哪些依据？"
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "title": "联系联通网络应用",
+      "courses": [
+        {
+          "course_id": 60482,
+          "question": "政企业务需要怎样的连接和保障？前面学过的传送技术怎样组合使用？"
+        },
+        {
+          "course_id": 46602,
+          "question": "网络设备为什么要对齐时间和节奏？时间同步与频率同步有什么区别？"
+        },
+        {
+          "course_id": 60484,
+          "question": "数据中心之间为什么需要光网络？怎样把架构描述对应到实际连接需求？"
+        }
+      ]
+    },
+    {
+      "id": "frontier",
+      "title": "前沿选读",
+      "courses": [
+        {
+          "course_id": 69697,
+          "question": "不用光纤时，光怎样跨空间传信息？对准、遮挡和环境会带来什么影响？"
+        },
+        {
+          "course_id": 69698,
+          "question": "光网络怎样同时传信息、感知沿途变化？哪些场景适用，还有哪些限制？"
+        }
+      ]
+    }
+  ]
+}

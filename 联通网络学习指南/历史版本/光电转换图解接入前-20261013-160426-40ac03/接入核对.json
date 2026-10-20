@@ -1,0 +1,21 @@
+{
+  "backup": "/Users/abi/Documents/project/personal/网络知识学习/联通网络学习指南/历史版本/光电转换图解接入前-20261013-160426-40ac03",
+  "updated": {
+    "传输网/光模块及光纤光缆通识.html": "b9af91403da755ea4765afd68b0b13e0aadbdca6bdbb31b5af95b4fbe4af7485",
+    "分享/网络知识指南-单文件分享版.html": "cbefc9072f4e8d23bbda02d6ffac83fa1fbc348610fc327c6b04bb42694dbe8a"
+  },
+  "original_content_preserved": true,
+  "chapters_preserved": [
+    "parts",
+    "fiber",
+    "interfaces",
+    "label",
+    "connect",
+    "practice"
+  ],
+  "share_changed_pages": [
+    "components"
+  ],
+  "share_documents": 15,
+  "share_images_unchanged": 7
+}

@@ -1,0 +1,4 @@
+<figure class="panel"><div class="figure-head"><b>A 发出一段数据，B 把它读回来</b><span>以改变光强的传送方式为例</span></div>
+<div class="flow-diagram"><div class="flow-row"><div class="flow-label">A 端发送</div><div class="flow-box"><b>数据与驱动电路</b><span>把电信号整理为适合驱动光器件的信号</span></div><div class="flow-arrow">→</div><div class="flow-box"><b>激光器与调制</b><span>产生光，并让光的强弱随数据变化</span></div><div class="flow-arrow">→</div><div class="flow-box"><b>发送光口</b><span>把携带数据的光送进光纤</span></div></div>
+<div class="flow-bridge">经过光纤，到达 B 端</div>
+<div class="flow-row receive"><div class="flow-label">B 端接收</div><div class="flow-box"><b>交回设备</b><span>输出恢复后的电信号</span></div><div class="flow-arrow">←</div><div class="flow-box"><b>接收处理电路</b><span>放大、处理波形，再判断数据</span></div><div class="flow-arrow">←</div><div class="flow-box"><b>光电探测器</b><span>把收到的光转换为微弱电流</span></div></div></div><figcaption>框内是功能关系，具体模块可把多个功能集成在一起；反方向也有对应的收发过程。</figcaption></figure>
